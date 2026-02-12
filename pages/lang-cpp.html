@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C++ - لغة C المطورة | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: "IBM Plex Sans Arabic", sans-serif; background: #f5f7fa; direction: rtl; }
+      
+      .lang-hero {
+        background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+        color: white;
+        padding: 80px 40px;
+        text-align: center;
+      }
+      
+      .lang-hero__icon {
+        font-size: 100px;
+        margin-bottom: 20px;
+      }
+      
+      .lang-hero__title {
+        font-size: 48px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+      
+      .lang-hero__subtitle {
+        font-size: 24px;
+        opacity: 0.95;
+      }
+      
+      .lang-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 60px 40px;
+      }
+      
+      .content-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        margin-bottom: 40px;
+      }
+      
+      .content-section h2 {
+        font-size: 32px;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        border-right: 5px solid #9c27b0;
+        padding-right: 15px;
+      }
+      
+      .content-section h3 {
+        font-size: 24px;
+        color: #34495e;
+        margin: 30px 0 15px 0;
+      }
+      
+      .content-section p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 15px;
+      }
+      
+      .content-section ul {
+        padding-right: 30px;
+        margin-bottom: 20px;
+      }
+      
+      .content-section li {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      
+      .code-example {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 10px;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-x: auto;
+        margin: 20px 0;
+        direction: ltr;
+        text-align: left;
+      }
+      
+      .feature-box {
+        background: #e3f2fd;
+        padding: 25px;
+        border-radius: 15px;
+        border-right: 4px solid #2196f3;
+        margin: 25px 0;
+      }
+      
+      .start-learning-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);
+        color: white;
+        padding: 15px 40px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 30px;
+        transition: all 0.3s;
+      }
+      
+      .start-learning-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo">
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link ">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link app-navbar__link--active">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link ">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link ">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link ">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="lang-hero">
+      <div class="lang-hero__icon">💻</div>
+      <h1 class="lang-hero__title">C++</h1>
+      <p class="lang-hero__subtitle">لغة C المطورة</p>
+    </div>
+
+    <div class="lang-container">
+      <div class="content-section">
+        <h2>📖 ما هي C++؟</h2>
+        <p>C++ هي واحدة من أقوى وأشهر لغات البرمجة في العالم. يستخدمها ملايين المطورين حول العالم لبناء تطبيقات ومواقع رائعة.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>🎯 لماذا تتعلم C++؟</h2>
+        <div class="feature-box">
+          <ul>
+            <li><strong>سهلة التعلم:</strong> C++ مناسبة للمبتدئين</li>
+            <li><strong>مطلوبة في سوق العمل:</strong> الشركات تبحث عن مطورين C++</li>
+            <li><strong>مجتمع كبير:</strong> ملايين المطورين جاهزون لمساعدتك</li>
+            <li><strong>مشاريع حقيقية:</strong> يمكنك بناء تطبيقات احترافية</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>📚 مثال بسيط</h2>
+        <p>إليك مثال بسيط على كود C++:</p>
+        <div class="code-example">// مثال على كود C++
+console.log("مرحباً من C++!");</div>
+      </div>
+
+      <div class="content-section" style="text-align: center;">
+        <h2>🚀 جاهز للبدء؟</h2>
+        <p>ابدأ رحلتك في تعلم C++ الآن!</p>
+        <a href="challenges.html" class="start-learning-btn">ابدأ التعلم</a>
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+  </body>
+</html>

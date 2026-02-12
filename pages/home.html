@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الرئيسية | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+        min-height: 100vh;
+        direction: rtl;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 100px 20px 80px;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s;
+      }
+
+      .hero p {
+        font-size: 24px;
+        opacity: 0.95;
+        margin-bottom: 40px;
+        animation: fadeInUp 1s;
+      }
+
+      .stats {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .stat-box {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 30px 40px;
+        border-radius: 20px;
+        min-width: 150px;
+      }
+
+      .stat-number {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 18px;
+        opacity: 0.9;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px 80px;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 36px;
+        color: white;
+        margin-bottom: 50px;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 25px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, #3498db, #2ecc71);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+      }
+
+      .feature-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+      }
+
+      .card-icon {
+        font-size: 80px;
+        margin-bottom: 25px;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .feature-card h2 {
+        font-size: 28px;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+
+      .feature-card p {
+        font-size: 16px;
+        color: #7f8c8d;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .card-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #3498db, #2ecc71);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .cta-section {
+        text-align: center;
+        padding: 60px 20px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        margin-top: 60px;
+      }
+
+      .cta-section h2 {
+        font-size: 36px;
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .cta-section p {
+        font-size: 20px;
+        color: white;
+        opacity: 0.95;
+        margin-bottom: 30px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background: white;
+        color: #667eea;
+        padding: 18px 50px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 700;
+        transition: all 0.3s;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo" />
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link app-navbar__link--active"
+            >الرئيسية</a
+          >
+          <a href="courses-new.html" class="app-navbar__link">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link"
+            >ذاكر مع أصدقائي</a
+          >
+          <a href="profile.html" class="app-navbar__link">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">
+            تسجيل الخروج
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>مرحباً بك في كاود! 👋</h1>
+      <p>منصتك الشاملة لتعلم البرمجة من الصفر حتى الاحتراف</p>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">كورس متاح</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">18</div>
+          <div class="stat-label">لغة برمجة</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">15</div>
+          <div class="stat-label">تحدي عملي</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">12</div>
+          <div class="stat-label">شارة إنجاز</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="section-title">🎯 ابدأ رحلتك الآن</h2>
+
+      <div class="cards-grid">
+        <div
+          class="feature-card"
+          onclick="window.location.href = 'courses-new.html'"
+        >
+          <div class="card-icon">💻</div>
+          <h2>المهارات التقنية</h2>
+          <p>
+            تعلم لغات البرمجة من الصفر - Python, JavaScript, Java وأكثر من 15
+            لغة
+          </p>
+          <span class="card-badge">18 لغة برمجة</span>
+        </div>
+
+        <div
+          class="feature-card"
+          onclick="window.location.href = 'soft-skills.html'"
+        >
+          <div class="card-icon">🧠</div>
+          <h2>المهارات الغير تقنية</h2>
+          <p>حل المشكلات، التفكير المنطقي، العمل الجماعي، وإدارة الوقت</p>
+          <span class="card-badge">6 كورسات</span>
+        </div>
+
+        <div
+          class="feature-card"
+          onclick="window.location.href = 'side-courses.html'"
+        >
+          <div class="card-icon">🎯</div>
+          <h2>كورسات جانبية</h2>
+          <p>Git & GitHub، التصميم، الأمن السيبراني، DevOps، SEO والتسويق</p>
+          <span class="card-badge">6 كورسات</span>
+        </div>
+
+        <div
+          class="feature-card"
+          onclick="window.location.href = 'challenges.html'"
+        >
+          <div class="card-icon">🏆</div>
+          <h2>التحديات البرمجية</h2>
+          <p>اختبر مهاراتك مع 15 تحدي برمجي من السهل للصعب</p>
+          <span class="card-badge">15 تحدي</span>
+        </div>
+
+        <div
+          class="feature-card"
+          onclick="window.location.href = 'study-groups.html'"
+        >
+          <div class="card-icon">👥</div>
+          <h2>ذاكر مع أصدقائي</h2>
+          <p>أنشئ جلسات دراسة جماعية وتنافس مع أصدقائك بشكل ودي</p>
+          <span class="card-badge">جديد!</span>
+        </div>
+
+        <div
+          class="feature-card"
+          onclick="window.location.href = 'profile.html'"
+        >
+          <div class="card-icon">🎖️</div>
+          <h2>الشارات والإنجازات</h2>
+          <p>اجمع 12 شارة وتتبع تقدمك وشارك إنجازاتك</p>
+          <span class="card-badge">12 شارة</span>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <h2>🚀 جاهز للبدء؟</h2>
+        <p>انضم لآلاف المتعلمين وابدأ رحلتك في عالم البرمجة اليوم</p>
+        <a href="courses-new.html" class="cta-btn">ابدأ التعلم الآن</a>
+      </div>
+    </div>
+
+    <script src="../js/home.js"></script>
+    <script>
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if (!currentUser) {
+        window.location.href = "login.html";
+      }
+
+      document
+        .getElementById("logoutBtn")
+        ?.addEventListener("click", function () {
+          if (confirm("Caod Says: هل تريد تسجيل الخروج؟")) {
+            localStorage.removeItem("currentUser");
+            window.location.href = "../index.html";
+          }
+        });
+    </script>
+  </body>
+</html>

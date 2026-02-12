@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ذاكر مع أصدقائي | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        background: linear-gradient(135deg, #3498db 0%, #2ecc27 100%);
+        min-height: 100vh;
+        direction: rtl;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 60px 20px 40px;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+      .hero p {
+        font-size: 18px;
+        opacity: 0.95;
+      }
+
+      .container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 20px;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 25px;
+        position: sticky;
+        top: 20px;
+      }
+
+      .action-btn {
+        font-family: "IBM Plex Sans Arabic";
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 12px;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .btn-primary {
+        background: white;
+        color: #667eea;
+      }
+
+      .btn-primary:hover {
+        transform: scale(1.03);
+        box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background: white;
+        color: #667eea;
+      }
+
+      .stats {
+        margin-top: 25px;
+        padding-top: 25px;
+        border-top: 2px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .stat {
+        color: white;
+        margin-bottom: 15px;
+      }
+
+      .stat-value {
+        font-size: 32px;
+        font-weight: bold;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      .online-indicator {
+        width: 10px;
+        height: 10px;
+        background: #4caf50;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 8px;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.7;
+          transform: scale(1.1);
+        }
+      }
+
+      /* Main Content */
+      .main-content {
+        height: 10rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 30px;
+        min-height: 600px;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+      }
+
+      .tab {
+        font-family: "IBM Plex Sans Arabic";
+        padding: 12px 25px;
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .tab.active {
+        background: white;
+        color: #667eea;
+      }
+
+      .tab:hover:not(.active) {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .sessions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 20px;
+      }
+
+      .session-card {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .session-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .session-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .session-title {
+        font-size: 20px;
+        color: #2c3e50;
+        font-weight: 700;
+        flex: 1;
+      }
+
+      .status-badge {
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .status-badge.active {
+        background: #c8e6c9;
+        color: #2e7d32;
+        animation: pulse 2s infinite;
+      }
+
+      .session-meta {
+        color: #666;
+        font-size: 14px;
+        margin: 8px 0;
+      }
+
+      .members-preview {
+        display: flex;
+        gap: 8px;
+        margin: 15px 0;
+      }
+
+      .member-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #3498db, #2ecc27);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        user-select: none;
+      }
+
+      .session-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .session-btn {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .join-btn {
+        background: linear-gradient(135deg, #3498db, #2ecc27);
+        color: white;
+      }
+
+      .join-btn:hover {
+        transform: scale(1.02);
+      }
+
+      /* Chat Section */
+      .chat-container {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        margin-bottom: 15px;
+        padding: 15px;
+        background: #f5f7fa;
+        border-radius: 10px;
+      }
+
+      .message {
+        margin-bottom: 12px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        max-width: 70%;
+      }
+
+      .message.me {
+        background: linear-gradient(135deg, #3498db, #2ecc27);
+        color: white;
+        margin-right: auto;
+      }
+
+      .message.other {
+        background: #e8eaf0;
+        color: #2c3e50;
+        margin-left: auto;
+      }
+
+      .message-author {
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        opacity: 0.8;
+      }
+
+      .message-text {
+        font-size: 14px;
+      }
+
+      .message-time {
+        font-size: 11px;
+        opacity: 0.6;
+        margin-top: 5px;
+      }
+
+      .chat-input-container {
+        display: flex;
+        gap: 10px;
+      }
+
+      .chat-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: 2px solid #e8eaf0;
+        border-radius: 10px;
+        font-size: 14px;
+        font-family: inherit;
+      }
+
+      .chat-input:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      .send-btn {
+        padding: 12px 25px;
+        background: linear-gradient(135deg, #3498db, #2ecc27);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .send-btn:hover {
+        transform: scale(1.05);
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 10000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        max-width: 500px;
+        width: 90%;
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .modal-title {
+        font-size: 24px;
+        color: #2c3e50;
+        font-weight: 700;
+      }
+
+      .close-btn {
+        font-size: 28px;
+        cursor: pointer;
+        color: #999;
+        user-select: none;
+      }
+
+      .close-btn:hover {
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #2c3e50;
+        font-weight: 600;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e8eaf0;
+        border-radius: 10px;
+        font-size: 15px;
+        font-family: inherit;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      @media (max-width: 1024px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo" />
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link">التحديات</a>
+          <a
+            href="study-groups-real.html"
+            class="app-navbar__link app-navbar__link--active"
+            >ذاكر مع أصدقائي</a
+          >
+          <a href="profile.html" class="app-navbar__link">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">
+            تسجيل الخروج
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>👥 ذاكر مع أصدقائي <span class="online-indicator"></span></h1>
+      <p>جلسات دراسة حية مع دردشة ومشاركة فورية</p>
+    </div>
+
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <button class="action-btn btn-primary" onclick="showCreateModal()">
+          ➕ إنشاء جلسة
+        </button>
+        <button class="action-btn btn-secondary" onclick="showJoinModal()">
+          🔗 انضمام بالكود
+        </button>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-value" id="activeSessions">0</span>
+            <span class="stat-label">جلسات نشطة</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="totalMembers">0</span>
+            <span class="stat-label">مشاركين online</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="mySessions">0</span>
+            <span class="stat-label">جلساتي</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="tabs">
+          <button class="tab active" onclick="switchTab('sessions')">
+            📚 الجلسات
+          </button>
+          <button
+            class="tab"
+            onclick="switchTab('chat')"
+            id="chatTab"
+            style="display: none"
+          >
+            💬 الدردشة
+          </button>
+          <button class="tab" onclick="switchTab('activity')">📊 النشاط</button>
+        </div>
+
+        <!-- Sessions Tab -->
+        <div id="sessionsTab" class="tab-content active">
+          <div class="sessions-grid" id="sessionsGrid"></div>
+        </div>
+
+        <!-- Chat Tab -->
+        <div id="chatTab" class="tab-content">
+          <div class="chat-container">
+            <h3 style="margin-bottom: 15px; color: #2c3e50">💬 دردشة الجلسة</h3>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input-container">
+              <input
+                type="text"
+                class="chat-input"
+                id="chatInput"
+                placeholder="اكتب رسالتك..."
+              />
+              <button class="send-btn" onclick="sendMessage()">إرسال</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity Tab -->
+        <div id="activityTab" class="tab-content">
+          <div class="chat-container">
+            <h3 style="margin-bottom: 15px; color: #2c3e50">📊 نشاط الجلسة</h3>
+            <div id="activityLog" style="color: white; padding: 20px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Modal -->
+    <div class="modal" id="createModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">إنشاء جلسة دراسة</h2>
+          <span class="close-btn" onclick="closeModal('createModal')"
+            >&times;</span
+          >
+        </div>
+        <form onsubmit="createSession(event)">
+          <div class="form-group">
+            <label>اسم الجلسة</label>
+            <input
+              type="text"
+              id="sessionName"
+              placeholder="مثال: مجموعة Python"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>الموضوع</label>
+            <select id="sessionTopic" required>
+              <option value="">اختر...</option>
+              <option value="Python">Python</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Java">Java</option>
+              <option value="تحديات">تحديات</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>الحد الأقصى للأعضاء</label>
+            <input
+              type="number"
+              id="maxMembers"
+              value="5"
+              min="2"
+              max="10"
+              required
+            />
+          </div>
+          <button type="submit" class="action-btn btn-primary">إنشاء</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Join Modal -->
+    <div class="modal" id="joinModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">الانضمام لجلسة</h2>
+          <span class="close-btn" onclick="closeModal('joinModal')"
+            >&times;</span
+          >
+        </div>
+        <form onsubmit="joinSession(event)">
+          <div class="form-group">
+            <label>كود الجلسة</label>
+            <input
+              type="text"
+              id="sessionCode"
+              placeholder="6 أحرف"
+              maxlength="6"
+              required
+            />
+          </div>
+          <button type="submit" class="action-btn btn-primary">انضمام</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/study-sessions.js"></script>
+    <script src="../js/app-common.js"></script>
+    <script>
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if (!currentUser) window.location.href = "login.html";
+
+      document
+        .getElementById("logoutBtn")
+        ?.addEventListener("click", function () {
+          if (confirm("هل تريد تسجيل الخروج؟")) {
+            localStorage.removeItem("currentUser");
+            window.location.href = "../index.html";
+          }
+        });
+
+      let sessions = JSON.parse(localStorage.getItem("studySessions")) || [];
+      let currentSessionId = localStorage.getItem("currentSessionId");
+      let messages = JSON.parse(localStorage.getItem("sessionMessages")) || {};
+
+      // Simulate real-time updates
+      let updateInterval = setInterval(() => {
+        renderSessions();
+        updateStats();
+        if (currentSessionId) {
+          renderChat();
+        }
+      }, 3000);
+
+      function generateCode() {
+        return Math.random().toString(36).substring(2, 8).toUpperCase();
+      }
+
+      function showCreateModal() {
+        // Use the new createStudySession function with meeting link
+        createStudySession();
+      }
+
+      function showJoinModal() {
+        document.getElementById("joinModal").style.display = "flex";
+      }
+
+      function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+      }
+
+      function createSession(e) {
+        e.preventDefault();
+
+        const session = {
+          id: Date.now(),
+          code: generateCode(),
+          name: document.getElementById("sessionName").value,
+          topic: document.getElementById("sessionTopic").value,
+          maxMembers: parseInt(document.getElementById("maxMembers").value),
+          creator: currentUser.username,
+          members: [
+            {
+              username: currentUser.username,
+              joinedAt: new Date().toISOString(),
+            },
+          ],
+          createdAt: new Date().toISOString(),
+          active: true,
+        };
+
+        sessions.push(session);
+        localStorage.setItem("studySessions", JSON.stringify(sessions));
+
+        alert(`✅ تم! الكود: ${session.code}`);
+        closeModal("createModal");
+        renderSessions();
+      }
+
+      function joinSession(e) {
+        e.preventDefault();
+
+        const code = document.getElementById("sessionCode").value.toUpperCase();
+        const session = sessions.find((s) => s.code === code && s.active);
+
+        if (!session) {
+          alert("❌ كود خاطئ");
+          return;
+        }
+
+        if (session.members.find((m) => m.username === currentUser.username)) {
+          currentSessionId = session.id;
+          localStorage.setItem("currentSessionId", currentSessionId);
+          closeModal("joinModal");
+          showChatTab();
+          return;
+        }
+
+        if (session.members.length >= session.maxMembers) {
+          alert("❌ ممتلئة");
+          return;
+        }
+
+        session.members.push({
+          username: currentUser.username,
+          joinedAt: new Date().toISOString(),
+        });
+        localStorage.setItem("studySessions", JSON.stringify(sessions));
+        currentSessionId = session.id;
+        localStorage.setItem("currentSessionId", currentSessionId);
+
+        closeModal("joinModal");
+        showChatTab();
+        renderSessions();
+      }
+
+      function showChatTab() {
+        document.getElementById("chatTab").style.display = "block";
+        document.querySelector('.tab[onclick*="chat"]').click();
+      }
+
+      function renderSessions() {
+        const grid = document.getElementById("sessionsGrid");
+        const activeSessions = sessions.filter((s) => s.active);
+
+        if (activeSessions.length === 0) {
+          grid.innerHTML =
+            '<div style="color: white; text-align: center; padding: 40px; grid-column: 1/-1;">لا توجد جلسات نشطة</div>';
+          return;
+        }
+
+        grid.innerHTML = activeSessions
+          .map((session) => {
+            const isMember = session.members.some(
+              (m) => m.username === currentUser.username,
+            );
+
+            return `
+            <div class="session-card">
+              <div class="session-header">
+                <div class="session-title">${session.name}</div>
+                <span class="status-badge active">نشطة</span>
+              </div>
+              <div class="session-meta">📚 ${session.topic}</div>
+              <div class="session-meta">👥 ${session.members.length}/${session.maxMembers} أعضاء</div>
+              <div class="session-meta">🔑 ${session.code}</div>
+              <div class="members-preview">
+                ${session.members
+                  .slice(0, 5)
+                  .map(
+                    (m) => `
+                  <div class="member-avatar">${m.username.charAt(0).toUpperCase()}</div>
+                `,
+                  )
+                  .join("")}
+              </div>
+              <div class="session-actions">
+                ${
+                  isMember
+                    ? `
+                  <button class="session-btn join-btn" onclick="openSession(${session.id})">
+                    فتح الجلسة
+                  </button>
+                `
+                    : `
+                  <button class="session-btn join-btn" onclick="quickJoin('${session.code}')">
+                    انضمام
+                  </button>
+                `
+                }
+              </div>
+            </div>
+          `;
+          })
+          .join("");
+      }
+
+      function openSession(id) {
+        currentSessionId = id;
+        localStorage.setItem("currentSessionId", id);
+        showChatTab();
+      }
+
+      function quickJoin(code) {
+        document.getElementById("sessionCode").value = code;
+        showJoinModal();
+      }
+
+      function switchTab(tab) {
+        document
+          .querySelectorAll(".tab")
+          .forEach((t) => t.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-content")
+          .forEach((c) => c.classList.remove("active"));
+
+        event.target.classList.add("active");
+        document.getElementById(tab + "Tab").classList.add("active");
+      }
+
+      function sendMessage() {
+        if (!currentSessionId) return;
+
+        const input = document.getElementById("chatInput");
+        const text = input.value.trim();
+        if (!text) return;
+
+        if (!messages[currentSessionId]) messages[currentSessionId] = [];
+
+        messages[currentSessionId].push({
+          author: currentUser.username,
+          text: text,
+          time: new Date().toISOString(),
+        });
+
+        localStorage.setItem("sessionMessages", JSON.stringify(messages));
+        input.value = "";
+        renderChat();
+      }
+
+      function renderChat() {
+        if (!currentSessionId) return;
+
+        const container = document.getElementById("chatMessages");
+        const sessionMessages = messages[currentSessionId] || [];
+
+        container.innerHTML = sessionMessages
+          .map(
+            (msg) => `
+          <div class="message ${msg.author === currentUser.username ? "me" : "other"}">
+            <div class="message-author">${msg.author}</div>
+            <div class="message-text">${msg.text}</div>
+            <div class="message-time">${new Date(msg.time).toLocaleTimeString("ar-SA")}</div>
+          </div>
+        `,
+          )
+          .join("");
+
+        container.scrollTop = container.scrollHeight;
+      }
+
+      function updateStats() {
+        const active = sessions.filter((s) => s.active).length;
+        const total = sessions.reduce((sum, s) => sum + s.members.length, 0);
+        const mine = sessions.filter((s) =>
+          s.members.some((m) => m.username === currentUser.username),
+        ).length;
+
+        document.getElementById("activeSessions").textContent = active;
+        document.getElementById("totalMembers").textContent = total;
+        document.getElementById("mySessions").textContent = mine;
+      }
+
+      // Enter to send
+      document
+        .getElementById("chatInput")
+        ?.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") sendMessage();
+        });
+
+      // Initial render
+      renderSessions();
+      updateStats();
+      if (currentSessionId) {
+        showChatTab();
+        renderChat();
+      }
+
+      // Cleanup
+      window.addEventListener("beforeunload", () => {
+        clearInterval(updateInterval);
+      });
+    </script>
+  </body>
+</html>

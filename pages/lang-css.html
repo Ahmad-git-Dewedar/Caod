@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS - لغة تصميم صفحات الويب | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: "IBM Plex Sans Arabic", sans-serif; background: #f5f7fa; direction: rtl; }
+      .lang-hero { background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); color: white; padding: 80px 40px; text-align: center; }
+      .lang-hero__icon { font-size: 100px; margin-bottom: 20px; }
+      .lang-hero__title { font-size: 48px; margin-bottom: 15px; font-weight: 700; }
+      .lang-hero__subtitle { font-size: 24px; opacity: 0.95; }
+      .lang-container { max-width: 1000px; margin: 0 auto; padding: 60px 40px; }
+      .content-section { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 40px; }
+      .content-section h2 { font-size: 32px; color: #2c3e50; margin-bottom: 20px; border-right: 5px solid #2196f3; padding-right: 15px; }
+      .content-section h3 { font-size: 24px; color: #34495e; margin: 30px 0 15px 0; }
+      .content-section p { font-size: 18px; line-height: 1.8; color: #555; margin-bottom: 15px; }
+      .content-section ul, .content-section ol { padding-right: 30px; margin-bottom: 20px; }
+      .content-section li { font-size: 18px; line-height: 1.8; color: #555; margin-bottom: 10px; }
+      .code-example { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 10px; font-family: 'Consolas', 'Monaco', monospace; font-size: 14px; line-height: 1.6; overflow-x: auto; margin: 20px 0; direction: ltr; text-align: left; }
+      .feature-box { background: #e3f2fd; padding: 25px; border-radius: 15px; border-right: 4px solid #2196f3; margin: 25px 0; }
+      .example-box { background: #f1f8e9; padding: 25px; border-radius: 15px; border-right: 4px solid #2196f3; margin: 25px 0; }
+      .start-learning-btn { display: inline-block; background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%); color: white; padding: 15px 40px; border-radius: 12px; text-decoration: none; font-size: 20px; font-weight: 600; margin-top: 30px; transition: all 0.3s; }
+      .start-learning-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4); }
+    </style>
+</head>
+<body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo">
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link ">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link app-navbar__link--active">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link ">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link ">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link ">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="lang-hero">
+      <div class="lang-hero__icon">🎨</div>
+      <h1 class="lang-hero__title">CSS</h1>
+      <p class="lang-hero__subtitle">اجعل موقعك جميلاً وجذاباً</p>
+    </div>
+
+    <div class="lang-container">
+      <div class="content-section">
+        <h2>📖 ما هي CSS؟</h2>
+        <p>CSS تعني <strong>(Cascading Style Sheets)</strong> وهي المسؤولة عن جعل موقعك جميلاً وجذاباً! إذا كانت HTML هي الهيكل، فإن CSS هي الألوان والتصميم.</p>
+        <p>بدون CSS، كل المواقع ستكون بيضاء مملة بخط أسود. مع CSS، يمكنك تصميم موقع أحلامك!</p>
+      </div>
+
+      <div class="content-section">
+        <h2>🎯 لماذا تتعلم CSS؟</h2>
+        <div class="feature-box">
+          <ul>
+            <li><strong>تحكم كامل في المظهر:</strong> غير الألوان والخطوط كما تريد</li>
+            <li><strong>تصميمات احترافية:</strong> اجعل موقعك يبدو كالمواقع الكبرى</li>
+            <li><strong>Responsive Design:</strong> موقعك يعمل على كل الأجهزة</li>
+            <li><strong>إبداع لا محدود:</strong> صمم بطريقتك الخاصة</li>
+            <li><strong>سهلة التعلم:</strong> قواعد بسيطة وواضحة</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>📚 الأساسيات التي ستتعلمها</h2>
+        
+        <h3>1. الألوان (Colors)</h3>
+        <div class="code-example">/* ألوان بالأسماء */
+body {
+    background-color: lightblue;
+    color: darkblue;
+}
+
+/* ألوان بالأكواد */
+h1 {
+    color: #ff6b6b;  /* أحمر */
+    background: #4ecdc4;  /* أخضر فاتح */
+}
+
+/* ألوان RGB */
+p {
+    color: rgb(100, 150, 200);
+}</div>
+
+        <h3>2. الخطوط (Fonts)</h3>
+        <div class="code-example">/* حجم الخط */
+h1 {
+    font-size: 48px;
+}
+
+/* نوع الخط */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* سمك الخط */
+strong {
+    font-weight: bold;
+}
+
+/* ميلان الخط */
+em {
+    font-style: italic;
+}</div>
+
+        <h3>3. المسافات (Spacing)</h3>
+        <div class="code-example">/* المسافة الداخلية */
+.box {
+    padding: 20px;  /* من جميع الجهات */
+    padding-top: 10px;  /* من الأعلى فقط */
+}
+
+/* المسافة الخارجية */
+.card {
+    margin: 20px;
+    margin-bottom: 30px;
+}</div>
+
+        <h3>4. الحدود (Borders)</h3>
+        <div class="code-example">/* حد بسيط */
+.box {
+    border: 2px solid black;
+}
+
+/* حدود مخصصة */
+.card {
+    border-top: 3px solid red;
+    border-radius: 10px;  /* زوايا دائرية */
+}
+
+/* ظل */
+.shadow-box {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}</div>
+
+        <h3>5. التخطيط (Layout)</h3>
+        <div class="code-example">/* Flexbox - تنظيم عناصر */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Grid - شبكة */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}</div>
+
+        <h3>6. الحركات (Animations)</h3>
+        <div class="code-example">/* تأثير عند hover */
+button {
+    background: blue;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: darkblue;
+    transform: scale(1.1);
+}
+
+/* حركة دوارة */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spinner {
+    animation: spin 2s infinite;
+}</div>
+      </div>
+
+      <div class="content-section">
+        <h2>💡 مثال تطبيقي كامل</h2>
+        <div class="example-box">
+          <p>بطاقة ملف شخصي جميلة:</p>
+          <div class="code-example"><!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial;
+        }
+        
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="avatar">👤</div>
+        <h2>أحمد محمد</h2>
+        <p>مطور ويب مبتدئ</p>
+    </div>
+</body>
+</html></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>🚀 ماذا يمكنك أن تبني بـ CSS؟</h2>
+        <ul>
+          <li><strong>تصميم المواقع:</strong> من البسيطة للمعقدة</li>
+          <li><strong>تطبيقات الموبايل:</strong> تصميم واجهات التطبيقات</li>
+          <li><strong>ألعاب ويب:</strong> تصميم شاشات الألعاب</li>
+          <li><strong>رسائل إلكترونية:</strong> تصميم emails جميلة</li>
+          <li><strong>عروض تقديمية:</strong> slides تفاعلية</li>
+        </ul>
+      </div>
+
+      <div class="content-section" style="text-align: center;">
+        <h2>🚀 جاهز للبدء؟</h2>
+        <p>ابدأ رحلتك في تعلم CSS الآن!</p>
+        <a href="challenges.html" class="start-learning-btn">ابدأ التعلم</a>
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+</body>
+</html>

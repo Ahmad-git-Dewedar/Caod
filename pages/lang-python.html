@@ -1,0 +1,1081 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python - لغة البرمجة الأقوى والأسهل | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: "IBM Plex Sans Arabic", sans-serif; background: #f5f7fa; direction: rtl; }
+      .lang-hero { background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); color: white; padding: 80px 40px; text-align: center; }
+      .lang-hero__icon { font-size: 100px; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+      .lang-hero__title { font-size: 48px; margin-bottom: 15px; font-weight: 700; }
+      .lang-hero__subtitle { font-size: 24px; opacity: 0.95; }
+      .lang-container { max-width: 1200px; margin: 0 auto; padding: 60px 40px; }
+      .content-section { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 40px; }
+      .content-section h2 { font-size: 32px; color: #2c3e50; margin-bottom: 20px; border-right: 5px solid #4caf50; padding-right: 15px; }
+      .content-section h3 { font-size: 24px; color: #34495e; margin: 30px 0 15px 0; }
+      .content-section p { font-size: 18px; line-height: 1.8; color: #555; margin-bottom: 15px; }
+      .content-section ul, .content-section ol { padding-right: 30px; margin-bottom: 20px; }
+      .content-section li { font-size: 18px; line-height: 1.8; color: #555; margin-bottom: 10px; }
+      .code-example { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 10px; font-family: 'Consolas', 'Monaco', monospace; font-size: 14px; line-height: 1.6; overflow-x: auto; margin: 20px 0; direction: ltr; text-align: left; position: relative; }
+      .code-example::before { content: 'Python'; position: absolute; top: 5px; right: 10px; background: #4caf50; color: white; padding: 2px 10px; border-radius: 5px; font-size: 12px; }
+      .feature-box { background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); padding: 25px; border-radius: 15px; border-right: 4px solid #4caf50; margin: 25px 0; }
+      .example-box { background: linear-gradient(135deg, #f1f8e9 0%, #dcedc8 100%); padding: 25px; border-radius: 15px; border-right: 4px solid #4caf50; margin: 25px 0; }
+      .warning-box { background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%); padding: 25px; border-radius: 15px; border-right: 4px solid #ff9800; margin: 25px 0; }
+      .tip-box { background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 25px; border-radius: 15px; border-right: 4px solid #2196f3; margin: 25px 0; }
+      .project-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); margin-bottom: 20px; border-top: 4px solid #4caf50; transition: transform 0.3s; }
+      .project-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+      .project-card h4 { color: #4caf50; font-size: 22px; margin-bottom: 10px; }
+      .project-card .difficulty { display: inline-block; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+      .difficulty.easy { background: #c8e6c9; color: #2e7d32; }
+      .difficulty.medium { background: #fff9c4; color: #f57f17; }
+      .difficulty.hard { background: #ffcdd2; color: #c62828; }
+      .course-path { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; }
+      .course-step { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: center; position: relative; }
+      .course-step::after { content: '→'; position: absolute; right: -30px; top: 50%; transform: translateY(-50%); font-size: 30px; color: #4caf50; }
+      .course-step:last-child::after { content: ''; }
+      .course-step .step-number { background: #4caf50; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: bold; }
+      .fact-card { background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%); padding: 20px; border-radius: 15px; margin: 15px 0; border-right: 4px solid #03a9f4; }
+      .start-learning-btn { display: inline-block; background: linear-gradient(135deg, #4caf50 0%, #45a049 100%); color: white; padding: 15px 40px; border-radius: 12px; text-decoration: none; font-size: 20px; font-weight: 600; margin-top: 30px; transition: all 0.3s; box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3); }
+      .start-learning-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4); }
+      .companies { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; margin: 30px 0; }
+      .company-badge { background: white; padding: 15px 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); font-weight: 600; color: #666; }
+    </style>
+</head>
+<body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo">
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link ">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link app-navbar__link--active">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link ">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link ">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link ">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="lang-hero">
+      <div class="lang-hero__icon">🐍</div>
+      <h1 class="lang-hero__title">Python</h1>
+      <p class="lang-hero__subtitle">لغة البرمجة الأقوى والأسهل في العالم</p>
+    </div>
+
+    <div class="lang-container">
+      <div class="content-section">
+        <h2>🌟 من يستخدم Python؟</h2>
+        <p style="font-size: 20px; margin-bottom: 20px;">أكبر الشركات في العالم تعتمد على Python!</p>
+        <div class="companies">
+          <div class="company-badge">🔍 Google</div>
+          <div class="company-badge">🎬 Netflix</div>
+          <div class="company-badge">🎵 Spotify</div>
+          <div class="company-badge">📘 Facebook</div>
+          <div class="company-badge">🚀 NASA</div>
+          <div class="company-badge">📷 Instagram</div>
+          <div class="company-badge">💬 Dropbox</div>
+          <div class="company-badge">🎮 Reddit</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>📖 ما هي Python؟</h2>
+        <p>Python هي لغة برمجة قوية جداً وسهلة التعلم! تم إنشاؤها عام 1991 على يد Guido van Rossum في هولندا. سميت بـ Python نسبة لمسلسل كوميدي بريطاني اسمه "Monty Python" وليس الثعبان!</p>
+        <p>Python لغة "عالية المستوى" - يعني الكود يشبه اللغة الإنجليزية! لا تحتاج تعقيدات ولا رموز معقدة. فقط اكتب ما تريد بشكل واضح والبرنامج يفهمك.</p>
+        
+        <div class="fact-card">
+          <strong>💡 هل تعلم؟</strong> Python هي اللغة الأسرع نمواً في العالم! في عام 2023، أكثر من 15 مليون مبرمج يستخدمونها.
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>🎯 لماذا Python هي الخيار المثالي؟</h2>
+        <div class="feature-box">
+          <ul>
+            <li><strong>🎓 سهلة كالإنجليزية:</strong> الكود يقرأ كجمل عادية، مثالي للمبتدئين! تحتاج وقت أقل بـ 5 مرات من Java</li>
+            <li><strong>💪 قوية جداً:</strong> من أبسط script لأعقد نظام ذكاء اصطناعي - Python تقدر على كل شيء</li>
+            <li><strong>💰 رواتب عالية:</strong> متوسط راتب مبرمج Python: $120,000 سنوياً في أمريكا، و25,000 ريال شهرياً في السعودية!</li>
+            <li><strong>🚀 الأكثر طلباً:</strong> أكثر من 70% من وظائف البرمجة تطلب Python - الطلب يفوق العرض بكثير!</li>
+            <li><strong>🌍 مجتمع ضخم:</strong> أكثر من 15 مليون مبرمج + 400,000 مكتبة جاهزة للاستخدام</li>
+            <li><strong>🎨 استخدامات لا نهائية:</strong> ويب، ذكاء اصطناعي، ألعاب، علوم، فضاء، روبوتات، كل شيء!</li>
+          </ul>
+        </div>
+
+        <div class="tip-box">
+          <strong>💼 معلومة مهمة:</strong> شركات مثل Google تدفع لمهندسي Python من $150,000 إلى $300,000 سنوياً! والطلب في ازدياد مستمر.
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>🗺️ مسارك في تعلم Python</h2>
+        <div class="course-path">
+          <div class="course-step">
+            <div class="step-number">1</div>
+            <h4>الأساسيات</h4>
+            <p>Print, Variables, Math</p>
+            <small>أسبوع واحد</small>
+          </div>
+          <div class="course-step">
+            <div class="step-number">2</div>
+            <h4>التحكم</h4>
+            <p>If, Loops, Functions</p>
+            <small>أسبوعان</small>
+          </div>
+          <div class="course-step">
+            <div class="step-number">3</div>
+            <h4>البيانات</h4>
+            <p>Lists, Dictionaries</p>
+            <small>أسبوع واحد</small>
+          </div>
+          <div class="course-step">
+            <div class="step-number">4</div>
+            <h4>المشاريع</h4>
+            <p>ألعاب وتطبيقات</p>
+            <small>شهر كامل</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>📚 الأساسيات - ابدأ من هنا!</h2>
+        
+        <h3>1️⃣ طباعة النصوص (Print) - أول خطوة!</h3>
+        <p>أبسط شيء في Python - اطبع أي شيء على الشاشة:</p>
+        <div class="code-example"># طباعة نص بسيط
+print("مرحباً بالعالم!")
+print("أنا أتعلم Python")
+print("🎉 البرمجة ممتعة!")
+
+# طباعة أرقام
+print(100)
+print(3.14159)
+print(2024)
+
+# طباعة عدة أشياء في سطر واحد
+print("اسمي أحمد وعمري", 10, "سنوات")
+print("النتيجة:", 5 + 3)
+
+# طباعة رموز تعبيرية
+print("❤️ 🚀 💻 🎮 ⚽")</div>
+
+        <div class="tip-box">
+          <strong>💡 نصيحة:</strong> جرب الأكواد بنفسك! افتح Python IDLE أو استخدم موقع replit.com وجرب كتابة أي شيء.
+        </div>
+
+        <h3>2️⃣ المتغيرات (Variables) - تخزين المعلومات</h3>
+        <p>المتغيرات مثل الصناديق - تحفظ فيها أي معلومات وتستخدمها لاحقاً:</p>
+        <div class="code-example"># متغيرات نصية (Strings)
+name = "أحمد محمد"
+city = "الرياض"
+favorite_game = "Minecraft"
+email = "ahmed@email.com"
+
+# متغيرات رقمية (Numbers)
+age = 10
+height = 145.5
+score = 95
+year = 2024
+
+# متغيرات منطقية (Booleans)
+is_student = True
+has_computer = True
+is_adult = False
+
+# استخدام المتغيرات
+print("اسمي", name)
+print("أسكن في", city)
+print("عمري", age, "سنوات")
+print("طولي", height, "سم")
+
+# تغيير قيمة المتغير
+score = 95
+print("النقاط:", score)
+score = score + 5  # إضافة 5 نقاط
+print("النقاط الجديدة:", score)  # 100</div>
+
+        <h3>3️⃣ العمليات الحسابية - Python كآلة حاسبة قوية!</h3>
+        <div class="code-example"># العمليات الأساسية
+print(5 + 3)      # جمع = 8
+print(10 - 4)     # طرح = 6
+print(6 * 7)      # ضرب = 42
+print(20 / 5)     # قسمة = 4.0
+print(10 // 3)    # قسمة صحيحة = 3
+print(10 % 3)     # باقي القسمة = 1
+print(2 ** 3)     # أس (2³) = 8
+print(2 ** 10)    # (2¹⁰) = 1024
+
+# عمليات متقدمة
+import math
+print(math.sqrt(16))     # جذر تربيعي = 4
+print(math.pi)           # قيمة باي = 3.14159...
+print(round(3.7))        # تقريب = 4
+print(abs(-10))          # قيمة مطلقة = 10
+
+# حساب محيط دائرة
+radius = 5
+circumference = 2 * math.pi * radius
+print("المحيط:", circumference)
+
+# حساب مساحة مستطيل
+length = 10
+width = 5
+area = length * width
+print("المساحة:", area)</div>
+
+        <h3>4️⃣ الشروط (If Statements) - اتخاذ القرارات</h3>
+        <p>البرنامج يفكر ويتخذ قرارات بناءً على الشروط:</p>
+        <div class="code-example"># شرط بسيط
+age = 10
+if age >= 13:
+    print("أنت مراهق")
+else:
+    print("أنت طفل")
+
+# شروط متعددة
+score = 85
+if score >= 90:
+    print("ممتاز! 🌟")
+elif score >= 80:
+    print("جيد جداً! 👍")
+elif score >= 70:
+    print("جيد ✓")
+elif score >= 60:
+    print("مقبول")
+else:
+    print("يحتاج تحسين")
+
+# شروط مركبة
+age = 15
+has_id = True
+has_ticket = True
+
+if age >= 13 and has_id and has_ticket:
+    print("✅ يمكنك الدخول")
+else:
+    print("❌ لا يمكنك الدخول")
+
+# مثال: نظام تسجيل دخول
+username = "ahmed"
+password = "1234"
+
+if username == "ahmed" and password == "1234":
+    print("✅ مرحباً! تم تسجيل الدخول بنجاح")
+else:
+    print("❌ اسم المستخدم أو كلمة المرور خاطئة")
+
+# مثال: حاسبة درجة حرارة
+temperature = 35
+
+if temperature >= 40:
+    print("🔥 حار جداً! ابق في البيت")
+elif temperature >= 30:
+    print("☀️ حار - ارتدِ ملابس خفيفة")
+elif temperature >= 20:
+    print("😊 جو معتدل - مثالي!")
+elif temperature >= 10:
+    print("🧥 بارد - ارتدِ جاكيت")
+else:
+    print("❄️ بارد جداً!")</div>
+
+        <h3>5️⃣ الحلقات (Loops) - تكرار الأوامر</h3>
+        <p>لو عايز تكرر شيء 100 مرة - الحلقات توفر عليك الوقت!</p>
+        <div class="code-example"># حلقة for - تكرار محدد
+for i in range(5):
+    print("مرحباً", i)
+
+# طباعة الأعداد من 1 إلى 10
+for number in range(1, 11):
+    print(number)
+
+# جدول الضرب
+for i in range(1, 11):
+    print(f"5 × {i} = {5 * i}")
+
+# العد التنازلي
+for i in range(10, 0, -1):
+    print(i)
+print("🚀 انطلاق!")
+
+# حلقة while - تكرار بشرط
+count = 1
+while count <= 5:
+    print("العدد:", count)
+    count += 1
+
+# لعبة بسيطة - اجمع النقاط
+points = 0
+clicks = 0
+while clicks < 10:
+    points += 10
+    clicks += 1
+    print(f"نقرة {clicks}: لديك {points} نقطة")
+
+# المرور على نص
+name = "أحمد"
+for letter in name:
+    print(letter)
+
+# المرور على قائمة
+fruits = ["تفاح", "موز", "برتقال", "مانجو"]
+for fruit in fruits:
+    print("أحب", fruit)
+
+# حلقة مع شروط
+for i in range(1, 21):
+    if i % 2 == 0:
+        print(f"{i} زوجي")
+    else:
+        print(f"{i} فردي")</div>
+
+        <h3>6️⃣ القوائم (Lists) - تخزين عدة قيم</h3>
+        <p>القوائم مثل سلة الفواكه - تحط فيها أي عدد من العناصر:</p>
+        <div class="code-example"># إنشاء قوائم
+numbers = [1, 2, 3, 4, 5]
+names = ["أحمد", "سارة", "علي", "فاطمة"]
+mixed = [10, "نص", True, 3.14, "Python"]
+scores = [95, 87, 92, 88, 91]
+
+# الوصول للعناصر (الترقيم يبدأ من 0)
+print(names[0])      # أحمد (العنصر الأول)
+print(numbers[2])    # 3 (العنصر الثالث)
+print(scores[-1])    # آخر عنصر = 91
+
+# إضافة عناصر
+names.append("محمد")      # إضافة في النهاية
+numbers.insert(0, 0)      # إضافة في البداية
+
+# حذف عناصر
+names.remove("علي")       # حذف عنصر محدد
+numbers.pop()             # حذف آخر عنصر
+names.pop(0)              # حذف عنصر برقمه
+
+# عمليات على القوائم
+print(len(numbers))       # عدد العناصر
+print(max(scores))        # أكبر قيمة
+print(min(scores))        # أقل قيمة
+print(sum(scores))        # المجموع
+
+# البحث
+if "سارة" in names:
+    print("سارة موجودة!")
+
+# الترتيب
+scores.sort()             # ترتيب تصاعدي
+scores.reverse()          # عكس الترتيب
+
+# قوائم متقدمة
+# جمع قائمتين
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+combined = list1 + list2  # [1, 2, 3, 4, 5, 6]
+
+# تكرار قائمة
+repeated = [0] * 5        # [0, 0, 0, 0, 0]
+
+# قائمة من range
+numbers = list(range(1, 11))  # [1, 2, 3, ..., 10]</div>
+
+        <h3>7️⃣ الدوال (Functions) - كتابة كود منظم</h3>
+        <p>الدوال مثل الآلات - تعطيها مدخلات وتعطيك مخرجات:</p>
+        <div class="code-example"># دالة بسيطة بدون معاملات
+def greet():
+    print("مرحباً!")
+    print("أهلاً بك في Python")
+
+greet()  # استدعاء الدالة
+
+# دالة بمعامل واحد
+def greet_person(name):
+    print(f"مرحباً {name}!")
+    print(f"سعيد بلقائك")
+
+greet_person("أحمد")
+greet_person("سارة")
+
+# دالة ترجع قيمة
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print("المجموع:", result)  # 8
+
+# دالة لحساب المساحة
+def rectangle_area(length, width):
+    area = length * width
+    return area
+
+area = rectangle_area(10, 5)
+print("المساحة:", area)  # 50
+
+# دالة معقدة أكثر
+def calculate_grade(score):
+    if score >= 90:
+        return "A ممتاز"
+    elif score >= 80:
+        return "B جيد جداً"
+    elif score >= 70:
+        return "C جيد"
+    elif score >= 60:
+        return "D مقبول"
+    else:
+        return "F راسب"
+
+print(calculate_grade(85))  # B جيد جداً
+print(calculate_grade(95))  # A ممتاز
+
+# دالة بمعاملات افتراضية
+def power(base, exponent=2):
+    return base ** exponent
+
+print(power(5))      # 25 (5²)
+print(power(5, 3))   # 125 (5³)
+
+# دالة تقبل أي عدد من المعاملات
+def sum_all(*numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+print(sum_all(1, 2, 3))           # 6
+print(sum_all(10, 20, 30, 40))    # 100</div>
+
+        <h3>8️⃣ القواميس (Dictionaries) - بيانات منظمة</h3>
+        <p>القواميس مثل دفتر الأرقام - كل قيمة لها مفتاح:</p>
+        <div class="code-example"># قاموس بسيط
+student = {
+    "name": "أحمد محمد",
+    "age": 10,
+    "grade": "الخامس",
+    "school": "مدرسة النور",
+    "score": 95,
+    "city": "الرياض"
+}
+
+# الوصول للقيم
+print(student["name"])    # أحمد محمد
+print(student["age"])     # 10
+
+# تعديل القيم
+student["score"] = 98
+student["age"] = 11
+
+# إضافة مفتاح جديد
+student["email"] = "ahmed@email.com"
+student["phone"] = "0501234567"
+
+# حذف مفتاح
+del student["phone"]
+
+# المرور على القاموس
+print("📋 بيانات الطالب:")
+for key, value in student.items():
+    print(f"{key}: {value}")
+
+# التحقق من وجود مفتاح
+if "email" in student:
+    print("البريد موجود")
+
+# قاموس لعبة
+player = {
+    "name": "المحارب",
+    "health": 100,
+    "attack": 25,
+    "defense": 15,
+    "level": 5,
+    "gold": 150,
+    "inventory": ["سيف", "درع", "جرعة صحة"]
+}
+
+print(f"اسم اللاعب: {player['name']}")
+print(f"الصحة: {player['health']}")
+print(f"المستوى: {player['level']}")
+
+# قاموس متعدد المستويات
+school = {
+    "name": "مدرسة النور",
+    "students": 500,
+    "teachers": {
+        "math": "أحمد",
+        "science": "سارة",
+        "english": "علي"
+    },
+    "grades": ["الأول", "الثاني", "الثالث"]
+}
+
+print(school["teachers"]["math"])  # أحمد</div>
+
+        <h3>9️⃣ التعامل مع الملفات - حفظ وقراءة البيانات</h3>
+        <div class="code-example"># كتابة في ملف
+file = open("notes.txt", "w", encoding="utf-8")
+file.write("مرحباً! هذا ملفي الأول\n")
+file.write("أنا أتعلم Python\n")
+file.write("البرمجة ممتعة!\n")
+file.close()
+
+# قراءة من ملف
+file = open("notes.txt", "r", encoding="utf-8")
+content = file.read()
+print(content)
+file.close()
+
+# طريقة أفضل (with)
+with open("scores.txt", "w", encoding="utf-8") as file:
+    file.write("أحمد: 95\n")
+    file.write("سارة: 92\n")
+    file.write("علي: 88\n")
+
+# قراءة سطر بسطر
+with open("scores.txt", "r", encoding="utf-8") as file:
+    for line in file:
+        print(line.strip())
+
+# إضافة لملف موجود
+with open("notes.txt", "a", encoding="utf-8") as file:
+    file.write("سطر جديد!\n")</div>
+
+        <h3>🔟 المكتبات - قوة Python الحقيقية!</h3>
+        <div class="code-example"># مكتبة random - الأرقام العشوائية
+import random
+
+# رقم عشوائي
+number = random.randint(1, 100)
+print("رقم عشوائي:", number)
+
+# اختيار عشوائي من قائمة
+colors = ["أحمر", "أزرق", "أخضر", "أصفر"]
+chosen = random.choice(colors)
+print("اللون المختار:", chosen)
+
+# خلط قائمة
+cards = ["A", "K", "Q", "J", "10"]
+random.shuffle(cards)
+print("الورق بعد الخلط:", cards)
+
+# مكتبة datetime - التاريخ والوقت
+from datetime import datetime
+
+now = datetime.now()
+print("الآن:", now)
+print("السنة:", now.year)
+print("الشهر:", now.month)
+print("اليوم:", now.day)
+print("الساعة:", now.hour)
+
+# مكتبة time - الوقت
+import time
+
+print("العد التنازلي:")
+for i in range(5, 0, -1):
+    print(i)
+    time.sleep(1)  # انتظار ثانية واحدة
+print("🚀 انطلاق!")
+
+# مكتبة math - الرياضيات
+import math
+
+print("الجذر التربيعي لـ 16:", math.sqrt(16))
+print("2 أس 10:", math.pow(2, 10))
+print("باي:", math.pi)
+print("تقريب لأعلى:", math.ceil(3.2))    # 4
+print("تقريب لأسفل:", math.floor(3.8))  # 3</div>
+      </div>
+
+      <div class="content-section">
+        <h2>💡 مشاريع عملية - ابنِ مشاريع حقيقية!</h2>
+        
+        <div class="project-card">
+          <h4>🎮 مشروع 1: لعبة تخمين الرقم</h4>
+          <span class="difficulty easy">سهل</span>
+          <p>لعبة تفاعلية حيث الكمبيوتر يختار رقم عشوائي وأنت تحاول تخمينه!</p>
+          <div class="code-example">import random
+
+print("🎮 لعبة تخمين الرقم!")
+print("خمّن الرقم بين 1 و 100")
+
+secret = random.randint(1, 100)
+attempts = 0
+max_attempts = 7
+
+while attempts < max_attempts:
+    guess = int(input("تخمينك: "))
+    attempts += 1
+    
+    if guess == secret:
+        print(f"🎉 مبروك! خمنت في {attempts} محاولات!")
+        break
+    elif guess < secret:
+        print("⬆️ أعلى!")
+    else:
+        print("⬇️ أقل!")
+    
+    remaining = max_attempts - attempts
+    if remaining > 0:
+        print(f"المحاولات المتبقية: {remaining}")
+    else:
+        print(f"😢 انتهت المحاولات! الرقم كان {secret}")</div>
+        </div>
+
+        <div class="project-card">
+          <h4>💰 مشروع 2: حاسبة نقاط اللعبة</h4>
+          <span class="difficulty easy">سهل</span>
+          <p>برنامج يحسب نقاطك في لعبة مع إحصائيات كاملة!</p>
+          <div class="code-example">class GameScore:
+    def __init__(self, player_name):
+        self.name = player_name
+        self.score = 0
+        self.level = 1
+        self.coins = 0
+    
+    def add_points(self, points):
+        self.score += points
+        self.coins += points // 10
+        if self.score >= 100 * self.level:
+            self.level += 1
+            print(f"🎉 تهانينا! وصلت للمستوى {self.level}")
+    
+    def show_stats(self):
+        print(f"\n📊 إحصائيات {self.name}:")
+        print(f"النقاط: {self.score}")
+        print(f"المستوى: {self.level}")
+        print(f"العملات: {self.coins}")
+
+# تجربة اللعبة
+player = GameScore("المحارب")
+player.add_points(50)
+player.add_points(75)
+player.show_stats()</div>
+        </div>
+
+        <div class="project-card">
+          <h4>📝 مشروع 3: قائمة المهام الذكية</h4>
+          <span class="difficulty medium">متوسط</span>
+          <p>تطبيق قائمة مهام مع حفظ تلقائي وترتيب حسب الأولوية!</p>
+          <div class="code-example">tasks = []
+
+def add_task(task, priority="medium"):
+    tasks.append({
+        "task": task,
+        "priority": priority,
+        "done": False
+    })
+    print(f"✅ تمت إضافة: {task}")
+
+def show_tasks():
+    if not tasks:
+        print("لا توجد مهام!")
+        return
+    
+    print("\n📋 قائمة المهام:")
+    for i, task in enumerate(tasks, 1):
+        status = "✓" if task["done"] else "○"
+        priority = task["priority"]
+        emoji = "🔴" if priority == "high" else "🟡" if priority == "medium" else "🟢"
+        print(f"{i}. [{status}] {emoji} {task['task']}")
+
+def complete_task(index):
+    tasks[index-1]["done"] = True
+    print(f"✅ تم إنجاز: {tasks[index-1]['task']}")
+
+# استخدام البرنامج
+add_task("حل واجب الرياضيات", "high")
+add_task("قراءة كتاب", "medium")
+add_task("اللعب بالكرة", "low")
+show_tasks()
+complete_task(1)
+show_tasks()</div>
+        </div>
+
+        <div class="project-card">
+          <h4>🎲 مشروع 4: لعبة حجر-ورقة-مقص</h4>
+          <span class="difficulty medium">متوسط</span>
+          <p>العب ضد الكمبيوتر مع إحصائيات الفوز!</p>
+          <div class="code-example">import random
+
+choices = ["حجر", "ورقة", "مقص"]
+wins = 0
+losses = 0
+ties = 0
+
+print("🎮 لعبة حجر-ورقة-مقص")
+print("اكتب: حجر، ورقة، أو مقص (أو 'خروج' للإنهاء)")
+
+while True:
+    user = input("\nاختيارك: ")
+    
+    if user == "خروج":
+        break
+    
+    if user not in choices:
+        print("❌ اختيار غير صحيح!")
+        continue
+    
+    computer = random.choice(choices)
+    print(f"الكمبيوتر اختار: {computer}")
+    
+    if user == computer:
+        print("🤝 تعادل!")
+        ties += 1
+    elif (user == "حجر" and computer == "مقص") or \
+         (user == "ورقة" and computer == "حجر") or \
+         (user == "مقص" and computer == "ورقة"):
+        print("🎉 فزت!")
+        wins += 1
+    else:
+        print("😢 خسرت!")
+        losses += 1
+
+print(f"\n📊 الإحصائيات النهائية:")
+print(f"فوز: {wins} | خسارة: {losses} | تعادل: {ties}")</div>
+        </div>
+
+        <div class="project-card">
+          <h4>📚 مشروع 5: مكتبة الكتب الإلكترونية</h4>
+          <span class="difficulty hard">صعب</span>
+          <p>نظام إدارة مكتبة كامل مع بحث وتصنيف!</p>
+          <div class="code-example">class Book:
+    def __init__(self, title, author, pages, category):
+        self.title = title
+        self.author = author
+        self.pages = pages
+        self.category = category
+        self.read = False
+    
+    def mark_as_read(self):
+        self.read = True
+        print(f"✅ تمت قراءة: {self.title}")
+    
+    def info(self):
+        status = "مقروء" if self.read else "لم يُقرأ"
+        print(f"📖 {self.title}")
+        print(f"   المؤلف: {self.author}")
+        print(f"   الصفحات: {self.pages}")
+        print(f"   التصنيف: {self.category}")
+        print(f"   الحالة: {status}")
+
+class Library:
+    def __init__(self):
+        self.books = []
+    
+    def add_book(self, book):
+        self.books.append(book)
+        print(f"✅ تمت إضافة: {book.title}")
+    
+    def search(self, keyword):
+        results = [b for b in self.books 
+                  if keyword.lower() in b.title.lower()]
+        if results:
+            print(f"\n🔍 نتائج البحث عن '{keyword}':")
+            for book in results:
+                book.info()
+        else:
+            print("❌ لم يتم العثور على نتائج")
+    
+    def show_all(self):
+        if not self.books:
+            print("المكتبة فارغة!")
+            return
+        print("\n📚 جميع الكتب:")
+        for book in self.books:
+            book.info()
+            print()
+
+# استخدام المكتبة
+library = Library()
+library.add_book(Book("هاري بوتر", "رولينج", 500, "خيال"))
+library.add_book(Book("Python للمبتدئين", "أحمد", 300, "برمجة"))
+library.search("Python")
+library.books[0].mark_as_read()
+library.show_all()</div>
+        </div>
+
+        <div class="project-card">
+          <h4>🤖 مشروع 6: روبوت محادثة ذكي</h4>
+          <span class="difficulty hard">صعب</span>
+          <p>بوت يفهم أسئلتك ويرد عليك بذكاء!</p>
+          <div class="code-example">import random
+
+class ChatBot:
+    def __init__(self, name):
+        self.name = name
+        self.responses = {
+            "مرحبا": ["مرحباً بك!", "أهلاً!", "سعيد بلقائك!"],
+            "كيف حالك": ["بخير، شكراً!", "رائع!", "ممتاز!"],
+            "ما اسمك": [f"اسمي {self.name}", f"أنا {self.name}"],
+            "وداعا": ["مع السلامة!", "إلى اللقاء!", "وداعاً!"],
+        }
+    
+    def respond(self, message):
+        message = message.lower()
+        
+        for keyword, responses in self.responses.items():
+            if keyword in message:
+                return random.choice(responses)
+        
+        # ردود افتراضية
+        defaults = [
+            "هذا مثير للاهتمام!",
+            "أخبرني المزيد",
+            "لم أفهم تماماً",
+            "ممكن توضح أكثر؟"
+        ]
+        return random.choice(defaults)
+
+# تجربة البوت
+bot = ChatBot("كاود")
+print(f"🤖 {bot.name}: مرحباً! كيف يمكنني مساعدتك؟")
+
+while True:
+    user_input = input("أنت: ")
+    
+    if user_input.lower() in ["خروج", "وداعا", "bye"]:
+        print(f"🤖 {bot.name}: مع السلامة!")
+        break
+    
+    response = bot.respond(user_input)
+    print(f"🤖 {bot.name}: {response}")</div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>🎯 أفكار مشاريع إضافية - تحدّى نفسك!</h2>
+        <div class="tip-box">
+          <h3>مشاريع للمبتدئين (المستوى 1)</h3>
+          <ul>
+            <li>⏰ منبه ذكي - يقول لك الوقت ويذكرك بالمهام</li>
+            <li>🎨 رسام ASCII - يرسم أشكال بالحروف</li>
+            <li>🔢 جدول الضرب التفاعلي - تدرب على الرياضيات</li>
+            <li>💱 محول العملات - يحول بين الريال والدولار واليورو</li>
+            <li>🎵 مشغل موسيقى بسيط - قائمة تشغيل بـ playsound</li>
+            <li>📊 حاسبة المعدل التراكمي - احسب معدلك</li>
+            <li>🌡️ محول درجات الحرارة - فهرنهايت إلى سيلسيوس</li>
+            <li>🔐 مولد كلمات مرور قوية - أمان++</li>
+          </ul>
+        </div>
+
+        <div class="example-box">
+          <h3>مشاريع متوسطة (المستوى 2)</h3>
+          <ul>
+            <li>📧 نظام إرسال إيميلات تلقائي</li>
+            <li>🌐 سكريبت تحميل ملفات من الإنترنت</li>
+            <li>📈 محلل إحصائيات - يقرأ Excel ويحلله</li>
+            <li>🗓️ تقويم شخصي مع تذكيرات</li>
+            <li>💬 تطبيق دردشة محلي</li>
+            <li>🎮 لعبة Snake الشهيرة</li>
+            <li>📷 برنامج تعديل صور بسيط</li>
+            <li>🔍 محرك بحث في الملفات</li>
+            <li>📊 Dashboard لمتابعة عاداتك</li>
+          </ul>
+        </div>
+
+        <div class="warning-box">
+          <h3>مشاريع متقدمة (المستوى 3)</h3>
+          <ul>
+            <li>🤖 بوت Discord أو Telegram كامل</li>
+            <li>🌐 موقع ويب ديناميكي بـ Flask/Django</li>
+            <li>🧠 نموذج تعلم آلة للتنبؤ</li>
+            <li>📱 تطبيق سطح مكتب بـ Tkinter/PyQt</li>
+            <li>🎮 لعبة RPG كاملة مع مستويات</li>
+            <li>📊 تحليل بيانات ضخمة + رسوم بيانية</li>
+            <li>🔐 نظام مصادقة كامل (Authentication)</li>
+            <li>🎵 مولد موسيقى بالذكاء الاصطناعي</li>
+            <li>📹 معالج فيديوهات - قص، دمج، تأثيرات</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>🚀 ماذا بعد Python؟ - المسارات المتاحة</h2>
+        
+        <div class="project-card">
+          <h4>🌐 تطوير الويب (Web Development)</h4>
+          <p><strong>المكتبات:</strong> Django, Flask, FastAPI</p>
+          <p><strong>تبني:</strong> مواقع، متاجر إلكترونية، APIs</p>
+          <p><strong>الراتب:</strong> $80,000 - $150,000 سنوياً</p>
+        </div>
+
+        <div class="project-card">
+          <h4>🧠 الذكاء الاصطناعي (AI/ML)</h4>
+          <p><strong>المكتبات:</strong> TensorFlow, PyTorch, Scikit-learn</p>
+          <p><strong>تبني:</strong> أنظمة ذكية، تعرف على الصور، معالجة لغة</p>
+          <p><strong>الراتب:</strong> $120,000 - $300,000 سنوياً</p>
+        </div>
+
+        <div class="project-card">
+          <h4>📊 تحليل البيانات (Data Science)</h4>
+          <p><strong>المكتبات:</strong> Pandas, NumPy, Matplotlib</p>
+          <p><strong>تبني:</strong> تحليلات، تقارير، تنبؤات</p>
+          <p><strong>الراتب:</strong> $90,000 - $180,000 سنوياً</p>
+        </div>
+
+        <div class="project-card">
+          <h4>🤖 الأتمتة (Automation)</h4>
+          <p><strong>المكتبات:</strong> Selenium, PyAutoGUI, Schedule</p>
+          <p><strong>تبني:</strong> روبوتات، سكريبتات توفر الوقت</p>
+          <p><strong>الراتب:</strong> $70,000 - $130,000 سنوياً</p>
+        </div>
+
+        <div class="project-card">
+          <h4>🎮 تطوير الألعاب (Game Development)</h4>
+          <p><strong>المكتبات:</strong> Pygame, Panda3D</p>
+          <p><strong>تبني:</strong> ألعاب 2D/3D، محاكيات</p>
+          <p><strong>الراتب:</strong> $60,000 - $120,000 سنوياً</p>
+        </div>
+
+        <div class="project-card">
+          <h4>🔬 البحث العلمي (Scientific Computing)</h4>
+          <p><strong>المكتبات:</strong> SciPy, SymPy, Astropy</p>
+          <p><strong>تبني:</strong> محاكيات علمية، حسابات معقدة</p>
+          <p><strong>الراتب:</strong> $85,000 - $160,000 سنوياً</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>💡 نصائح ذهبية للنجاح في Python</h2>
+        
+        <div class="tip-box">
+          <h3>1. اكتب كود كل يوم! 💪</h3>
+          <p>حتى لو 10 دقائق - الممارسة المستمرة أهم من الكم. البرمجة مهارة تُكتسب بالتكرار!</p>
+        </div>
+
+        <div class="tip-box">
+          <h3>2. اقرأ كود الآخرين 👀</h3>
+          <p>افتح مشاريع على GitHub وشوف كيف المحترفين يكتبون الكود. تعلم من الأفضل!</p>
+        </div>
+
+        <div class="tip-box">
+          <h3>3. ابنِ مشاريع حقيقية 🏗️</h3>
+          <p>لا تكتفي بالدروس - ابنِ مشاريع تحل مشاكل حقيقية. Portfolio قوي = وظيفة أفضل!</p>
+        </div>
+
+        <div class="tip-box">
+          <h3>4. لا تخاف من الأخطاء 🐛</h3>
+          <p>كل error هو فرصة تعلم! أفضل المبرمجين يقضون 50% من وقتهم في تصليح أخطاء.</p>
+        </div>
+
+        <div class="tip-box">
+          <h3>5. استخدم موارد مجانية 🆓</h3>
+          <p>YouTube، Coursera، edX، FreeCodeCamp - كنوز مجانية! لا عذر لعدم التعلم.</p>
+        </div>
+
+        <div class="tip-box">
+          <h3>6. انضم لمجتمع 👥</h3>
+          <p>Discord، Reddit، Stack Overflow - اسأل، شارك، تعلم من الآخرين. لست وحدك!</p>
+        </div>
+
+        <div class="tip-box">
+          <h3>7. تعلم Git مبكراً 📦</h3>
+          <p>GitHub ضروري لأي مبرمج! ابدأ فيه من اليوم الأول. كل الشركات تستخدمه.</p>
+        </div>
+
+        <div class="tip-box">
+          <h3>8. اقرأ الـ Documentation 📚</h3>
+          <p>docs.python.org هو صديقك! تعود على قراءة الوثائق - مهارة حياتية للمبرمج.</p>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>🎓 موارد تعليمية مجانية - ابدأ الآن!</h2>
+        
+        <div class="feature-box">
+          <h3>📺 قنوات يوتيوب عربية</h3>
+          <ul>
+            <li>الزيرو ويب سكول - Elzero Web School</li>
+            <li>محمد الدسوقي</li>
+            <li>أكاديمية حسونة</li>
+            <li>بالعربي تيك</li>
+            <li>كودزيلا</li>
+          </ul>
+        </div>
+
+        <div class="feature-box">
+          <h3>📺 قنوات يوتيوب إنجليزية</h3>
+          <ul>
+            <li>Corey Schafer - أفضل شرح Python</li>
+            <li>Programming with Mosh</li>
+            <li>Tech With Tim</li>
+            <li>freeCodeCamp.org - كورسات كاملة مجاناً</li>
+            <li>Sentdex - AI و Machine Learning</li>
+          </ul>
+        </div>
+
+        <div class="feature-box">
+          <h3>🌐 مواقع تعليمية</h3>
+          <ul>
+            <li>Python.org - الموقع الرسمي</li>
+            <li>W3Schools - دروس تفاعلية</li>
+            <li>Real Python - مقالات متقدمة</li>
+            <li>Codecademy - تعلم تفاعلي</li>
+            <li>LeetCode - تمارين برمجية</li>
+            <li>HackerRank - تحديات</li>
+          </ul>
+        </div>
+
+        <div class="feature-box">
+          <h3>📱 تطبيقات موبايل</h3>
+          <ul>
+            <li>SoloLearn - تعلم أثناء التنقل</li>
+            <li>Programming Hub</li>
+            <li>Enki - دروس يومية قصيرة</li>
+            <li>Grasshopper - للمبتدئين جداً</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>🌍 حقائق مذهلة عن Python!</h2>
+        
+        <div class="fact-card">
+          <strong>🚀 NASA</strong> تستخدم Python في استكشاف الفضاء! برامجهم للتحكم في المركبات الفضائية مكتوبة بـ Python.
+        </div>
+
+        <div class="fact-card">
+          <strong>🎬 Industrial Light & Magic</strong> (شركة جورج لوكاس) تستخدم Python لإنتاج مؤثرات Star Wars و Marvel!
+        </div>
+
+        <div class="fact-card">
+          <strong>📷 Instagram</strong> يخدم أكثر من مليار مستخدم باستخدام Django (إطار Python)!
+        </div>
+
+        <div class="fact-card">
+          <strong>🎵 Spotify</strong> يستخدم Python لتحليل 80 مليون أغنية وتقديم توصيات مخصصة!
+        </div>
+
+        <div class="fact-card">
+          <strong>🚗 Tesla</strong> تستخدم Python في برمجة السيارات ذاتية القيادة!
+        </div>
+
+        <div class="fact-card">
+          <strong>🎮 EVE Online</strong> لعبة فضاء ضخمة بها أكثر من 500,000 سطر كود Python!
+        </div>
+
+        <div class="fact-card">
+          <strong>💰 Bitcoin</strong> أول عميلة مشفرة - كُتب الكود الأساسي بـ Python!
+        </div>
+
+        <div class="fact-card">
+          <strong>🧬 Human Genome Project</strong> مشروع الجينوم البشري استخدم Python لتحليل الحمض النووي!
+        </div>
+      </div>
+
+      <div class="content-section" style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2 style="color: white; border: none;">🚀 جاهز لتبدأ رحلتك؟</h2>
+        <p style="color: white; font-size: 20px; margin: 20px 0;">انضم لملايين المبرمجين حول العالم!</p>
+        <p style="color: white; font-size: 18px; opacity: 0.9;">ابدأ الآن - المستقبل ينتظرك! 💻✨</p>
+        <a href="challenges.html" class="start-learning-btn" style="background: white; color: #667eea; margin-top: 30px;">ابدأ التعلم الآن</a>
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+</body>
+</html>

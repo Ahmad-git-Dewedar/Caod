@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كورسات جانبية | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+      body {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        min-height: 100vh;
+        direction: rtl;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 80px 20px 60px;
+        color: white;
+      }
+
+      .hero h1 { font-size: 48px; margin-bottom: 20px; }
+      .hero p { font-size: 20px; opacity: 0.9; }
+
+      .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+      .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .course-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+
+      .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+      }
+
+      .course-icon { font-size: 50px; margin-bottom: 20px; }
+      
+      .course-card h2 { 
+        font-size: 24px; 
+        color: #2c3e50; 
+        margin-bottom: 15px; 
+      }
+
+      .duration {
+        display: inline-block;
+        background: #e8f5e9;
+        color: #2e7d32;
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .course-card p {
+        color: #7f8c8d;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .topics-list {
+        list-style: none;
+        margin: 15px 0;
+      }
+
+      .topics-list li {
+        padding: 8px 0;
+        color: #555;
+        font-size: 14px;
+      }
+
+      .topics-list li::before {
+        content: "✓ ";
+        color: #4caf50;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+
+      .course-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #f093fb, #f5576c);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+      }
+
+      .course-btn:hover {
+        transform: scale(1.05);
+      }
+    </style>
+</head>
+<body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo" />
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link app-navbar__link--active">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>⭐ كورسات جانبية</h1>
+      <p>مهارات إضافية تكمل رحلتك البرمجية</p>
+    </div>
+
+    <div class="container">
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-icon">🔧</div>
+          <h2>Git و GitHub</h2>
+          <span class="duration">⏱️ أسبوعين</span>
+          <p>تحكم النسخ والتعاون مع المطورين الآخرين</p>
+          <ul class="topics-list">
+            <li>Git Basics</li>
+            <li>Branches و Merging</li>
+            <li>Pull Requests</li>
+            <li>GitHub Collaboration</li>
+          </ul>
+          <button class="course-btn">ابدأ الآن</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">🎨</div>
+          <h2>التصميم الجرافيكي</h2>
+          <span class="duration">⏱️ 3 أسابيع</span>
+          <p>تعلم أساسيات التصميم والإنتاج الرسومي</p>
+          <ul class="topics-list">
+            <li>أساسيات التصميم</li>
+            <li>Figma و Adobe XD</li>
+            <li>Prototyping</li>
+            <li>UI/UX Design</li>
+          </ul>
+          <button class="course-btn">ابدأ الآن</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">🔐</div>
+          <h2>الأمن السيبراني</h2>
+          <span class="duration">⏱️ 4 أسابيع</span>
+          <p>حماية التطبيقات والبيانات من الهجمات</p>
+          <ul class="topics-list">
+            <li>SQL Injection</li>
+            <li>XSS Attacks</li>
+            <li>Encryption</li>
+            <li>Penetration Testing</li>
+          </ul>
+          <button class="course-btn">ابدأ الآن</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">☁️</div>
+          <h2>DevOps و السحابة</h2>
+          <span class="duration">⏱️ 3 أسابيع</span>
+          <p>نشر تطبيقاتك على الخوادم السحابية</p>
+          <ul class="topics-list">
+            <li>Docker</li>
+            <li>AWS و Google Cloud</li>
+            <li>CI/CD Pipelines</li>
+            <li>Kubernetes</li>
+          </ul>
+          <button class="course-btn">ابدأ الآن</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">📊</div>
+          <h2>تحليل البيانات</h2>
+          <span class="duration">⏱️ 4 أسابيع</span>
+          <p>استخراج الرؤى من البيانات الضخمة</p>
+          <ul class="topics-list">
+            <li>Pandas و NumPy</li>
+            <li>Data Visualization</li>
+            <li>Statistical Analysis</li>
+            <li>Big Data Tools</li>
+          </ul>
+          <button class="course-btn">ابدأ الآن</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">📱</div>
+          <h2>تطوير تطبيقات الويب</h2>
+          <span class="duration">⏱️ 5 أسابيع</span>
+          <p>بناء تطبيقات ويب احترافية وقابلة للتوسع</p>
+          <ul class="topics-list">
+            <li>Vue.js و Angular</li>
+            <li>Full Stack Development</li>
+            <li>REST APIs</li>
+            <li>Web Performance</li>
+          </ul>
+          <button class="course-btn">ابدأ الآن</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">🤖</div>
+          <h2>الذكاء الاصطناعي</h2>
+          <span class="duration">⏱️ 6 أسابيع</span>
+          <p>تعلم أساسيات Machine Learning و Deep Learning</p>
+          <ul class="topics-list">
+            <li>TensorFlow</li>
+            <li>Neural Networks</li>
+            <li>NLP</li>
+            <li>Computer Vision</li>
+          </ul>
+          <button class="course-btn">ابدأ الآن</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">🌐</div>
+          <h2>تحسين محركات البحث</h2>
+          <span class="duration">⏱️ أسبوعين</span>
+          <p>أرفع موقعك في نتائج جوجل</p>
+          <ul class="topics-list">
+            <li>SEO Fundamentals</li>
+            <li>Keyword Research</li>
+            <li>Link Building</li>
+            <li>Analytics</li>
+          </ul>
+          <button class="course-btn">ابدأ الآن</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+    <script>
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if (!currentUser) window.location.href = "login.html";
+
+      document.getElementById("logoutBtn")?.addEventListener("click", function() {
+        if (confirm("هل تريد تسجيل الخروج؟")) {
+          localStorage.removeItem("currentUser");
+          window.location.href = "../index.html";
+        }
+      });
+    </script>
+</body>
+</html>

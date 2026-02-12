@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>المهارات التقنية | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { 
+        font-family: "IBM Plex Sans Arabic", sans-serif; 
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        direction: rtl; 
+      }
+      
+      .hero {
+        text-align: center;
+        padding: 80px 20px 60px;
+        color: white;
+      }
+      
+      .hero h1 { font-size: 52px; margin-bottom: 20px; animation: fadeInDown 0.8s; }
+      .hero p { font-size: 24px; opacity: 0.95; animation: fadeInUp 0.8s; }
+      
+      .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px 80px; }
+      
+      .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 40px;
+      }
+      
+      .category-card {
+        background: white;
+        border-radius: 30px;
+        padding: 50px 40px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        transition: all 0.4s;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .category-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        transform: scaleX(0);
+        transition: transform 0.4s;
+      }
+      
+      .category-card:hover::before { transform: scaleX(1); }
+      .category-card:hover { transform: translateY(-10px); box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+      
+      .category-icon {
+        font-size: 90px;
+        margin-bottom: 25px;
+        animation: float 3s ease-in-out infinite;
+        user-select: none;
+      }
+      
+      @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+      @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+      
+      .category-title {
+        font-size: 36px;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+      
+      .category-subtitle {
+        font-size: 18px;
+        color: #7f8c8d;
+        margin-bottom: 25px;
+      }
+      
+      .languages-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 25px 0;
+      }
+      
+      .lang-badge {
+        background: linear-gradient(135deg, #f5f7fa, #e8eaf0);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #555;
+        border: 2px solid transparent;
+        transition: all 0.3s;
+      }
+      
+      .lang-badge:hover {
+        border-color: #667eea;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        transform: scale(1.05);
+      }
+      
+      .category-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 18px;
+        border: none;
+        border-radius: 15px;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-top: 20px;
+      }
+      
+      .category-btn:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+      }
+    </style>
+</head>
+<body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo">
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link app-navbar__link--active">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>💻 المهارات التقنية</h1>
+      <p>اختر مسارك البرمجي - Frontend أو Backend</p>
+    </div>
+
+    <div class="container">
+      <div class="categories-grid">
+        
+        <!-- Frontend -->
+        <div class="category-card" onclick="window.location.href='frontend-languages.html'">
+          <div class="category-icon">🎨</div>
+          <h2 class="category-title">Frontend Development</h2>
+          <p class="category-subtitle">تطوير واجهات المستخدم والتصميم التفاعلي</p>
+          
+          <div class="languages-list">
+            <span class="lang-badge">HTML</span>
+            <span class="lang-badge">CSS</span>
+            <span class="lang-badge">JavaScript</span>
+            <span class="lang-badge">TypeScript</span>
+            <span class="lang-badge">React</span>
+          </div>
+          
+          <p style="color: #555; margin: 20px 0;">
+            <strong>ماذا ستتعلم؟</strong><br>
+            بناء صفحات ويب جميلة وتفاعلية، تصميم واجهات المستخدم، الرسوم المتحركة، وتطبيقات الويب الحديثة
+          </p>
+          
+          <button class="category-btn">استكشف Frontend 🚀</button>
+        </div>
+
+        <!-- Backend -->
+        <div class="category-card" onclick="window.location.href='backend-languages.html'">
+          <div class="category-icon">⚙️</div>
+          <h2 class="category-title">Backend Development</h2>
+          <p class="category-subtitle">بناء الخوادم وقواعد البيانات والمنطق البرمجي</p>
+          
+          <div class="languages-list">
+            <span class="lang-badge">Python</span>
+            <span class="lang-badge">Java</span>
+            <span class="lang-badge">PHP</span>
+            <span class="lang-badge">Ruby</span>
+            <span class="lang-badge">Go</span>
+            <span class="lang-badge">C++</span>
+          </div>
+          
+          <p style="color: #555; margin: 20px 0;">
+            <strong>ماذا ستتعلم؟</strong><br>
+            بناء APIs، قواعد البيانات، المصادقة والأمان، معالجة البيانات، وإدارة الخوادم
+          </p>
+          
+          <button class="category-btn">استكشف Backend ⚡</button>
+        </div>
+
+        <!-- Mobile -->
+        <div class="category-card" onclick="window.location.href='mobile-languages.html'">
+          <div class="category-icon">📱</div>
+          <h2 class="category-title">Mobile Development</h2>
+          <p class="category-subtitle">تطوير تطبيقات الهواتف الذكية</p>
+          
+          <div class="languages-list">
+            <span class="lang-badge">Swift</span>
+            <span class="lang-badge">Kotlin</span>
+            <span class="lang-badge">Dart (Flutter)</span>
+            <span class="lang-badge">React Native</span>
+          </div>
+          
+          <p style="color: #555; margin: 20px 0;">
+            <strong>ماذا ستتعلم؟</strong><br>
+            بناء تطبيقات iOS و Android، UI/UX للموبايل، التعامل مع APIs، والنشر على المتاجر
+          </p>
+          
+          <button class="category-btn">استكشف Mobile 📲</button>
+        </div>
+
+        <!-- Other -->
+        <div class="category-card" onclick="window.location.href='other-languages.html'">
+          <div class="category-icon">🔧</div>
+          <h2 class="category-title">لغات أخرى</h2>
+          <p class="category-subtitle">قواعد البيانات، البرمجة المرئية، وأدوات مساعدة</p>
+          
+          <div class="languages-list">
+            <span class="lang-badge">SQL</span>
+            <span class="lang-badge">C</span>
+            <span class="lang-badge">Rust</span>
+            <span class="lang-badge">Scratch</span>
+          </div>
+          
+          <p style="color: #555; margin: 20px 0;">
+            <strong>ماذا ستتعلم؟</strong><br>
+            إدارة قواعد البيانات، البرمجة منخفضة المستوى، الأمان والأداء، والبرمجة المرئية للمبتدئين
+          </p>
+          
+          <button class="category-btn">استكشف المزيد 🎯</button>
+        </div>
+        
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+    <script>
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (!currentUser) window.location.href = 'login.html';
+      
+      document.getElementById('logoutBtn')?.addEventListener('click', function() {
+        if (confirm('هل تريد تسجيل الخروج؟')) {
+          localStorage.removeItem('currentUser');
+          window.location.href = '../index.html';
+        }
+      });
+    </script>
+</body>
+</html>

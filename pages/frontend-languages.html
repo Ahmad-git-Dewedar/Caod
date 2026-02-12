@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frontend Development | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        background: #f5f7fa;
+        direction: rtl;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #3498db 0%, #2ecc2e 100%);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+      .hero p {
+        font-size: 22px;
+        opacity: 0.95;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .languages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .lang-card {
+        background: white;
+        border-radius: 20px;
+        padding: 35px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+        border-top: 5px solid;
+      }
+
+      .lang-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .lang-card.html {
+        border-color: #e34c26;
+      }
+      .lang-card.css {
+        border-color: #264de4;
+      }
+      .lang-card.js {
+        border-color: #f7df1e;
+      }
+      .lang-card.ts {
+        border-color: #3178c6;
+      }
+      .lang-card.react {
+        border-color: #61dafb;
+      }
+
+      .lang-icon {
+        font-size: 70px;
+        margin-bottom: 20px;
+        user-select: none;
+      }
+
+      .lang-name {
+        font-size: 28px;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .lang-desc {
+        color: #7f8c8d;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .lang-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid #f5f7fa;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .stat-value {
+        font-size: 20px;
+        font-weight: bold;
+        color: #667eea;
+      }
+
+      .stat-label {
+        font-size: 13px;
+        color: #999;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo" />
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link">الرئيسية</a>
+          <a
+            href="courses-new.html"
+            class="app-navbar__link app-navbar__link--active"
+            >الكورسات</a
+          >
+          <a href="challenges.html" class="app-navbar__link">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link"
+            >ذاكر مع أصدقائي</a
+          >
+          <a href="profile.html" class="app-navbar__link">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">
+            تسجيل الخروج
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>🎨 Frontend Development</h1>
+      <p>تطوير واجهات المستخدم الجميلة والتفاعلية</p>
+    </div>
+
+    <div class="container">
+      <div class="languages-grid">
+        <a href="lang-html.html" class="lang-card html">
+          <div class="lang-icon">🌐</div>
+          <h3 class="lang-name">HTML</h3>
+          <p class="lang-desc">
+            لغة بناء صفحات الويب - الأساس الذي يبدأ منه كل مطور
+          </p>
+          <div class="lang-stats">
+            <div class="stat">
+              <div class="stat-value">سهل</div>
+              <div class="stat-label">المستوى</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">أيام</div>
+              <div class="stat-label">المدة</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">الطلب</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="lang-css.html" class="lang-card css">
+          <div class="lang-icon">🎨</div>
+          <h3 class="lang-name">CSS</h3>
+          <p class="lang-desc">
+            لغة تصميم وتنسيق صفحات الويب - اجعل موقعك جميلاً
+          </p>
+          <div class="lang-stats">
+            <div class="stat">
+              <div class="stat-value">سهل</div>
+              <div class="stat-label">المستوى</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">أسبوع</div>
+              <div class="stat-label">المدة</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">الطلب</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="lang-javascript.html" class="lang-card js">
+          <div class="lang-icon">⚙️</div>
+          <h3 class="lang-name">JavaScript</h3>
+          <p class="lang-desc">
+            لغة البرمجة الأكثر شعبية - اجعل موقعك حياً ومتفاعلاً
+          </p>
+          <div class="lang-stats">
+            <div class="stat">
+              <div class="stat-value">متوسط</div>
+              <div class="stat-label">المستوى</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">شهر</div>
+              <div class="stat-label">المدة</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">97%</div>
+              <div class="stat-label">الطلب</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="lang-typescript.html" class="lang-card ts">
+          <div class="lang-icon">📘</div>
+          <h3 class="lang-name">TypeScript</h3>
+          <p class="lang-desc">
+            JavaScript مع Types - كود أكثر أماناً واحترافية
+          </p>
+          <div class="lang-stats">
+            <div class="stat">
+              <div class="stat-value">متوسط</div>
+              <div class="stat-label">المستوى</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">أسبوعان</div>
+              <div class="stat-label">المدة</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">80%</div>
+              <div class="stat-label">الطلب</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="lang-react.html" class="lang-card react">
+          <div class="lang-icon">⚛️</div>
+          <h3 class="lang-name">React</h3>
+          <p class="lang-desc">مكتبة Facebook لبناء واجهات حديثة وسريعة</p>
+          <div class="lang-stats">
+            <div class="stat">
+              <div class="stat-value">متقدم</div>
+              <div class="stat-label">المستوى</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">شهر</div>
+              <div class="stat-label">المدة</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">90%</div>
+              <div class="stat-label">الطلب</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+    <script src="../js/languages-filter-modal.js"></script>
+    <script>
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if (!currentUser) window.location.href = "login.html";
+
+      document
+        .getElementById("logoutBtn")
+        ?.addEventListener("click", function () {
+          if (confirm("هل تريد تسجيل الخروج؟")) {
+            localStorage.removeItem("currentUser");
+            window.location.href = "../index.html";
+          }
+        });
+    </script>
+  </body>
+</html>

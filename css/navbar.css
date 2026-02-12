@@ -1,0 +1,108 @@
+/* Unified Navigation Styles */
+.app-navbar {
+  background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-navbar__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-navbar__logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.app-navbar__logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.app-navbar__title {
+  margin: 0;
+  font-size: 28px;
+  color: white;
+  font-weight: 700;
+}
+
+.app-navbar__nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.app-navbar__link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.app-navbar__link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.app-navbar__link--active {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.app-navbar__user {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+
+.app-navbar__logout-btn {
+  background: white;
+  color: #1e88e5;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.3s;
+  font-size: 15px;
+}
+
+.app-navbar__logout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .app-navbar {
+    padding: 15px 20px;
+  }
+
+  .app-navbar__container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .app-navbar__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .app-navbar__link {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}

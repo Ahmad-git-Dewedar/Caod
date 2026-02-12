@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>كورسات جانبية | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        background: #f5f7fa;
+        direction: rtl;
+      }
+      .hero {
+        background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+      .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+      .course-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+      .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+      .course-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+      }
+      .course-card h2 {
+        font-size: 28px;
+        color: #2c3e50;
+        margin-bottom: 15px;
+      }
+      .course-card p {
+        color: #7f8c8d;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+      .topics-list {
+        list-style: none;
+        margin: 20px 0;
+      }
+      .topics-list li {
+        padding: 10px 0;
+        color: #555;
+        border-bottom: 1px solid #ecf0f1;
+      }
+      .topics-list li::before {
+        content: "•";
+        color: #667eea;
+        font-weight: bold;
+        margin-left: 10px;
+        font-size: 20px;
+      }
+      .start-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #3498db, #2ecc71);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+      .start-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+      }
+      .level {
+        display: inline-block;
+        background: #fff3e0;
+        color: #e65100;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo" />
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link">الرئيسية</a>
+          <a
+            href="courses-new.html"
+            class="app-navbar__link app-navbar__link--active"
+            >الكورسات</a
+          >
+          <a href="challenges.html" class="app-navbar__link">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link"
+            >ذاكر مع أصدقائي</a
+          >
+          <a href="profile.html" class="app-navbar__link">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">
+            تسجيل الخروج
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>🎯 كورسات جانبية</h1>
+      <p>مهارات إضافية تكمل رحلتك البرمجية</p>
+    </div>
+
+    <div class="container">
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-icon">📦</div>
+          <span class="level">مبتدئ</span>
+          <h2>Git & GitHub</h2>
+          <p>تحكم في إصدارات الكود وتعاون مع المطورين حول العالم</p>
+          <ul class="topics-list">
+            <li>أساسيات Version Control</li>
+            <li>Branches & Merging</li>
+            <li>Pull Requests</li>
+            <li>المساهمة في Open Source</li>
+            <li>GitHub Actions</li>
+          </ul>
+          <a href="#" class="start-btn">ابدأ التعلم</a>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">🎨</div>
+          <span class="level">مبتدئ</span>
+          <h2>التصميم الجرافيكي</h2>
+          <p>صمم واجهات جميلة وجذابة لتطبيقاتك</p>
+          <ul class="topics-list">
+            <li>UI/UX Basics</li>
+            <li>Figma & Adobe XD</li>
+            <li>نظرية الألوان</li>
+            <li>Typography</li>
+            <li>تصميم Responsive</li>
+          </ul>
+          <a href="#" class="start-btn">ابدأ التعلم</a>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">🔒</div>
+          <span class="level">متوسط</span>
+          <h2>الأمن السيبراني</h2>
+          <p>احمِ تطبيقاتك من الهجمات والثغرات الأمنية</p>
+          <ul class="topics-list">
+            <li>Web Security Basics</li>
+            <li>التشفير والـ Encryption</li>
+            <li>Ethical Hacking مقدمة</li>
+            <li>Safe Coding Practices</li>
+            <li>OWASP Top 10</li>
+          </ul>
+          <a href="#" class="start-btn">ابدأ التعلم</a>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">⚙️</div>
+          <span class="level">متقدم</span>
+          <h2>DevOps</h2>
+          <p>أتمتة النشر والتطوير باحترافية</p>
+          <ul class="topics-list">
+            <li>CI/CD Pipelines</li>
+            <li>Docker أساسيات</li>
+            <li>Cloud Platforms</li>
+            <li>Kubernetes مقدمة</li>
+            <li>Automation Tools</li>
+          </ul>
+          <a href="#" class="start-btn">ابدأ التعلم</a>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">📊</div>
+          <span class="level">مبتدئ</span>
+          <h2>SEO</h2>
+          <p>حسّن ظهور موقعك في محركات البحث</p>
+          <ul class="topics-list">
+            <li>Search Engine Optimization</li>
+            <li>Google Analytics</li>
+            <li>Content Strategy</li>
+            <li>Keywords Research</li>
+            <li>On-Page & Off-Page SEO</li>
+          </ul>
+          <a href="#" class="start-btn">ابدأ التعلم</a>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">💼</div>
+          <span class="level">مبتدئ</span>
+          <h2>التسويق الرقمي</h2>
+          <p>سوّق لمشاريعك ومنتجاتك بفعالية</p>
+          <ul class="topics-list">
+            <li>Social Media Marketing</li>
+            <li>Content Marketing</li>
+            <li>Email Marketing</li>
+            <li>Facebook & Google Ads</li>
+            <li>Analytics & ROI</li>
+          </ul>
+          <a href="#" class="start-btn">ابدأ التعلم</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+    <script>
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if (!currentUser) window.location.href = "login.html";
+      document
+        .getElementById("logoutBtn")
+        ?.addEventListener("click", function () {
+          if (confirm("Caod Says: هل تريد تسجيل الخروج؟")) {
+            localStorage.removeItem("currentUser");
+            window.location.href = "../index.html";
+          }
+        });
+    </script>
+  </body>
+</html>

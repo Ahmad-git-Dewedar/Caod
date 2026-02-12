@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML - لغة بناء صفحات الويب | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: "IBM Plex Sans Arabic", sans-serif; background: #f5f7fa; direction: rtl; }
+      
+      .lang-hero {
+        background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+        color: white;
+        padding: 80px 40px;
+        text-align: center;
+      }
+      
+      .lang-hero__icon {
+        font-size: 100px;
+        margin-bottom: 20px;
+      }
+      
+      .lang-hero__title {
+        font-size: 48px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+      
+      .lang-hero__subtitle {
+        font-size: 24px;
+        opacity: 0.95;
+      }
+      
+      .lang-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 60px 40px;
+      }
+      
+      .content-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        margin-bottom: 40px;
+      }
+      
+      .content-section h2 {
+        font-size: 32px;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        border-right: 5px solid #4caf50;
+        padding-right: 15px;
+      }
+      
+      .content-section h3 {
+        font-size: 24px;
+        color: #34495e;
+        margin: 30px 0 15px 0;
+      }
+      
+      .content-section p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 15px;
+      }
+      
+      .content-section ul, .content-section ol {
+        padding-right: 30px;
+        margin-bottom: 20px;
+      }
+      
+      .content-section li {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 10px;
+      }
+      
+      .code-example {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 10px;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        overflow-x: auto;
+        margin: 20px 0;
+        direction: ltr;
+        text-align: left;
+      }
+      
+      .feature-box {
+        background: #e3f2fd;
+        padding: 25px;
+        border-radius: 15px;
+        border-right: 4px solid #2196f3;
+        margin: 25px 0;
+      }
+      
+      .example-box {
+        background: #f1f8e9;
+        padding: 25px;
+        border-radius: 15px;
+        border-right: 4px solid #4caf50;
+        margin: 25px 0;
+      }
+      
+      .start-learning-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+        color: white;
+        padding: 15px 40px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 30px;
+        transition: all 0.3s;
+      }
+      
+      .start-learning-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo">
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link ">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link app-navbar__link--active">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link ">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link ">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link ">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="lang-hero">
+      <div class="lang-hero__icon">🌐</div>
+      <h1 class="lang-hero__title">HTML</h1>
+      <p class="lang-hero__subtitle">لغة بناء صفحات الويب</p>
+    </div>
+
+    <div class="lang-container">
+      <div class="content-section">
+        <h2>📖 ما هي HTML؟</h2>
+        <p>HTML تعني <strong>(HyperText Markup Language)</strong> وهي اللغة الأساسية لبناء صفحات الإنترنت. تخيل أن HTML هي الهيكل العظمي لأي موقع تزوره على الإنترنت! كل موقع على الإنترنت - سواء كان جوجل، يوتيوب، أو فيسبوك - كلهم يستخدمون HTML.</p>
+        <p>HTML ليست لغة برمجة بالمعنى التقليدي، بل هي لغة "وصف" تخبر المتصفح كيف يعرض المحتوى. تستخدم "وسوم" (Tags) لتحديد أجزاء الصفحة المختلفة.</p>
+      </div>
+
+      <div class="content-section">
+        <h2>🎯 لماذا تتعلم HTML؟</h2>
+        <div class="feature-box">
+          <ul>
+            <li><strong>سهلة التعلم:</strong> HTML هي أسهل لغة يمكنك البدء بها! لا تحتاج رياضيات أو خبرة سابقة.</li>
+            <li><strong>أساسية لكل مبرمج:</strong> أي شخص يريد العمل في تطوير المواقع يجب أن يعرف HTML أولاً.</li>
+            <li><strong>مطلوبة في سوق العمل:</strong> جميع الشركات - من الصغيرة للعملاقة - تحتاج مطورين يعرفون HTML.</li>
+            <li><strong>ابدأ مشروعك الأول:</strong> يمكنك إنشاء موقعك الخاص في دقائق معدودة!</li>
+            <li><strong>أساس لكل شيء:</strong> بدون HTML، لا يمكنك تعلم CSS أو JavaScript أو أي تقنية ويب أخرى.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>📚 الأساسيات التي ستتعلمها</h2>
+        
+        <h3>1. بنية صفحة HTML الأساسية</h3>
+        <p>كل صفحة HTML تبدأ بهذا الهيكل:</p>
+        <div class="code-example"><!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>عنوان الصفحة</title>
+</head>
+<body>
+    <!-- المحتوى هنا -->
+</body>
+</html></div>
+
+        <h3>2. العناوين (Headings)</h3>
+        <p>تستخدم لكتابة العناوين بأحجام مختلفة من h1 (الأكبر) إلى h6 (الأصغر):</p>
+        <div class="code-example"><h1>العنوان الأكبر - الأهم</h1>
+<h2>عنوان أصغر</h2>
+<h3>عنوان أصغر</h3>
+<h4>عنوان صغير</h4></div>
+
+        <h3>3. الفقرات والنصوص (Paragraphs & Text)</h3>
+        <p>لكتابة النصوص والفقرات:</p>
+        <div class="code-example"><p>هذه فقرة نصية عادية</p>
+
+<strong>نص عريض (Bold)</strong>
+<em>نص مائل (Italic)</em>
+<u>نص تحته خط</u>
+
+<br> <!-- فاصل سطر -->
+
+<p>فقرة <strong>بها كلمة عريضة</strong> ونص عادي</p></div>
+
+        <h3>4. الروابط (Links)</h3>
+        <p>لإنشاء روابط تنقلك لصفحات أخرى:</p>
+        <div class="code-example"><!-- رابط لموقع خارجي -->
+<a href="https://google.com">اذهب إلى جوجل</a>
+
+<!-- رابط لصفحة في نفس الموقع -->
+<a href="about.html">من نحن</a>
+
+<!-- رابط يفتح في صفحة جديدة -->
+<a href="https://youtube.com" target="_blank">يوتيوب</a></div>
+
+        <h3>5. الصور (Images)</h3>
+        <p>لإضافة صور جميلة لموقعك:</p>
+        <div class="code-example"><!-- صورة بسيطة -->
+<img src="photo.jpg" alt="وصف الصورة">
+
+<!-- صورة بحجم محدد -->
+<img src="logo.png" alt="الشعار" width="200" height="100">
+
+<!-- صورة من الإنترنت -->
+<img src="https://example.com/image.jpg" alt="صورة"></div>
+
+        <h3>6. القوائم (Lists)</h3>
+        <p>لإنشاء قوائم منظمة:</p>
+        <div class="code-example"><!-- قائمة نقطية -->
+<ul>
+    <li>العنصر الأول</li>
+    <li>العنصر الثاني</li>
+    <li>العنصر الثالث</li>
+</ul>
+
+<!-- قائمة مرقمة -->
+<ol>
+    <li>الخطوة الأولى</li>
+    <li>الخطوة الثانية</li>
+    <li>الخطوة الثالثة</li>
+</ol></div>
+
+        <h3>7. الجداول (Tables)</h3>
+        <p>لتنظيم البيانات في جداول:</p>
+        <div class="code-example"><table border="1">
+    <tr>
+        <th>الاسم</th>
+        <th>العمر</th>
+    </tr>
+    <tr>
+        <td>أحمد</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>سارة</td>
+        <td>12</td>
+    </tr>
+</table></div>
+
+        <h3>8. النماذج (Forms)</h3>
+        <p>لإنشاء نماذج إدخال البيانات:</p>
+        <div class="code-example"><form>
+    <label>الاسم:</label>
+    <input type="text" placeholder="أدخل اسمك">
+    
+    <label>البريد الإلكتروني:</label>
+    <input type="email" placeholder="email@example.com">
+    
+    <label>الرسالة:</label>
+    <textarea rows="4"></textarea>
+    
+    <button type="submit">إرسال</button>
+</form></div>
+      </div>
+
+      <div class="content-section">
+        <h2>💡 مثال تطبيقي كامل</h2>
+        <div class="example-box">
+          <p>إليك مثال لصفحة HTML كاملة مع كل العناصر:</p>
+          <div class="code-example"><!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>موقعي الأول</title>
+</head>
+<body>
+    <h1>مرحباً بك في موقعي! 👋</h1>
+    <p>أنا أحمد، عمري 10 سنوات وأحب البرمجة</p>
+    
+    <h2>هواياتي المفضلة:</h2>
+    <ul>
+        <li>البرمجة 💻</li>
+        <li>كرة القدم ⚽</li>
+        <li>الرسم 🎨</li>
+    </ul>
+    
+    <h2>تواصل معي:</h2>
+    <a href="mailto:ahmed@email.com">راسلني</a>
+    
+    <img src="my-photo.jpg" alt="صورتي" width="200">
+</body>
+</html></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>🚀 ماذا يمكنك أن تبني بـ HTML؟</h2>
+        <ul>
+          <li>موقع شخصي يعرف عنك</li>
+          <li>مدونة لكتابة مقالاتك</li>
+          <li>صفحة هبوط (Landing Page) لمنتج</li>
+          <li>سيرة ذاتية تفاعلية</li>
+          <li>معرض صور</li>
+          <li>نموذج تسجيل أو تواصل</li>
+        </ul>
+      </div>
+
+      <div class="content-section" style="text-align: center;">
+        <h2>🚀 جاهز للبدء؟</h2>
+        <p>ابدأ رحلتك في تعلم HTML الآن!</p>
+        <a href="challenges.html" class="start-learning-btn">ابدأ التعلم</a>
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+  </body>
+</html>

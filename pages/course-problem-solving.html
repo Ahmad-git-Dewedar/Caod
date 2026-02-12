@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حل المشكلات | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "IBM Plex Sans Arabic", sans-serif;
+            background: #f5f7fa;
+            direction: rtl;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 { font-size: 48px; margin-bottom: 20px; }
+        .hero p { font-size: 20px; opacity: 0.9; }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .course-header {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-header h2 { font-size: 36px; color: #2c3e50; margin-bottom: 20px; }
+        .course-header p { font-size: 18px; color: #7f8c8d; line-height: 1.8; }
+        
+        .course-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .info-value { font-size: 28px; font-weight: bold; }
+        .info-label { font-size: 14px; opacity: 0.9; margin-top: 10px; }
+        
+        .modules {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .modules h3 { font-size: 32px; color: #2c3e50; margin-bottom: 30px; }
+        
+        .module {
+            background: #f8f9fa;
+            border-right: 5px solid #667eea;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .module:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+        }
+        
+        .module-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .module-title {
+            font-size: 22px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .module-duration {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .module-description {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .topics {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        .topics li {
+            padding: 8px 0;
+            color: #555;
+            padding-right: 20px;
+        }
+        
+        .topics li::before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+        .lessons-list {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .lesson {
+            padding: 12px 0;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #555;
+        }
+        
+        .lesson:last-child { border-bottom: none; }
+        
+        .lesson-icon {
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-section h3 { font-size: 32px; margin-bottom: 20px; }
+        .cta-section p { font-size: 18px; margin-bottom: 30px; opacity: 0.95; }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="app-navbar">
+        <div class="app-navbar__container">
+            <div class="app-navbar__logo-section">
+                <img src="../img/logo.png" alt="كاود" class="app-navbar__logo" />
+                <h1 class="app-navbar__title">كاود</h1>
+            </div>
+            <div class="app-navbar__nav">
+                <a href="home.html" class="app-navbar__link">الرئيسية</a>
+                <a href="courses-new.html" class="app-navbar__link app-navbar__link--active">الكورسات</a>
+                <a href="challenges.html" class="app-navbar__link">التحديات</a>
+                <a href="study-groups-real.html" class="app-navbar__link">ذاكر مع أصدقائي</a>
+                <a href="profile.html" class="app-navbar__link">الملف الشخصي</a>
+                <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>🧩 حل المشكلات - Problem Solving</h1>
+        <p>تعلم كيف تفكر كمبرمج محترف وتحل أي مشكلة برمجية مهما كانت معقدة</p>
+    </div>
+
+    <div class="container">
+        <div class="course-header">
+            <h2>عن هذا الكورس</h2>
+            <p>
+                حل المشاكل هو أساس البرمجة. هذا الكورس يعلمك الطريقة الصحيحة للتفكير والتحليل لحل أي مشكلة برمجية.
+                ستتعلم تقنيات احترافية استخدمها أكبر الشركات التقنية مثل Google و Facebook.
+            </p>
+            
+            <div class="course-info">
+                <div class="info-box">
+                    <div class="info-value">2 أسابيع</div>
+                    <div class="info-label">مدة الكورس</div>
+                </div>
+                <div class="info-box">
+                    <div class="info-value">12 فيديو</div>
+                    <div class="info-label">عدد الدروس</div>
+                </div>
+                <div class="info-box">
+                    <div class="info-value">15 تمرين</div>
+                    <div class="info-label">تمارين عملية</div>
+                </div>
+                <div class="info-box">
+                    <div class="info-value">مبتدئ</div>
+                    <div class="info-label">مستوى الكورس</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modules">
+            <h3>📚 محتوى الكورس</h3>
+            
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-title">الأسبوع الأول: أساسيات حل المشاكل</div>
+                    <div class="module-duration">أسبوع واحد</div>
+                </div>
+                <div class="module-description">
+                    ستتعلم الخطوات الأساسية لحل أي مشكلة برمجية والتفكير بطريقة منطقية.
+                </div>
+                <ul class="topics">
+                    <li>فهم المشكلة بشكل صحيح</li>
+                    <li>تقسيم المشكلة الكبيرة لأجزاء صغيرة</li>
+                    <li>Brainstorming والحل العام</li>
+                    <li>التفكير النقدي والتحليلي</li>
+                    <li>اختيار أفضل حل</li>
+                </ul>
+                <div class="lessons-list">
+                    <div class="lesson">
+                        <span>الدرس 1: مقدمة عن حل المشاكل</span>
+                        <div class="lesson-icon">1</div>
+                    </div>
+                    <div class="lesson">
+                        <span>الدرس 2: فهم المشكلة بعمق</span>
+                        <div class="lesson-icon">2</div>
+                    </div>
+                    <div class="lesson">
+                        <span>الدرس 3: تقسيم المشكلة</span>
+                        <div class="lesson-icon">3</div>
+                    </div>
+                    <div class="lesson">
+                        <span>الدرس 4: تمرين عملي 1</span>
+                        <div class="lesson-icon">T</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-title">الأسبوع الثاني: Debugging والتحسين</div>
+                    <div class="module-duration">أسبوع واحد</div>
+                </div>
+                <div class="module-description">
+                    تعلم كيف تجد وتصلح الأخطاء، وتحسّن كود الحل لجعله أسرع وأكفأ.
+                </div>
+                <ul class="topics">
+                    <li>أنواع الأخطاء وكيفية تحديدها</li>
+                    <li>استخدام Debugger بشكل احترافي</li>
+                    <li>Logging والـ Monitoring</li>
+                    <li>تحسين الأداء (Performance)</li>
+                    <li>كتابة كود نظيف وآمن</li>
+                </ul>
+                <div class="lessons-list">
+                    <div class="lesson">
+                        <span>الدرس 5: أنواع الأخطاء في البرمجة</span>
+                        <div class="lesson-icon">5</div>
+                    </div>
+                    <div class="lesson">
+                        <span>الدرس 6: استخدام Debugger</span>
+                        <div class="lesson-icon">6</div>
+                    </div>
+                    <div class="lesson">
+                        <span>الدرس 7: تحسين الأداء</span>
+                        <div class="lesson-icon">7</div>
+                    </div>
+                    <div class="lesson">
+                        <span>الدرس 8: مشروع عملي نهائي</span>
+                        <div class="lesson-icon">P</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module">
+                <div class="module-header">
+                    <div class="module-title">مشاريع عملية حقيقية</div>
+                    <div class="module-duration">مستمر</div>
+                </div>
+                <div class="module-description">
+                    مشاريع حقيقية لتطبيق ما تعلمته على مشاكل برمجية فعلية.
+                </div>
+                <ul class="topics">
+                    <li>حل مشاكل الخوارزميات المختلفة</li>
+                    <li>تحسين كود قديم</li>
+                    <li>المشاركة في مشاريع اختبارية</li>
+                    <li>حل مسائل من مقابلات العمل</li>
+                    <li>Portfolio building</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>جاهز تبدأ رحلتك؟ 🚀</h3>
+            <p>انضم إلى آلاف المتعلمين اللي تحسنوا مهاراتهم في حل المشاكل</p>
+            <button class="cta-btn" onclick="alert('شكراً لك! تم تسجيل اهتمامك بالكورس. قريباً سيكون الكورس متاح!')">ابدأ الآن</button>
+        </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+    <script>
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (!currentUser) window.location.href = "login.html";
+
+        document.getElementById("logoutBtn")?.addEventListener("click", function () {
+            if (confirm("Caod Says: هل تريد تسجيل الخروج؟")) {
+                localStorage.removeItem("currentUser");
+                window.location.href = "../index.html";
+            }
+        });
+    </script>
+</body>
+</html>

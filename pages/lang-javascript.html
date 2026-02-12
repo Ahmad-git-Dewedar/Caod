@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript - لغة البرمجة الأكثر شعبية | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: "IBM Plex Sans Arabic", sans-serif; background: #f5f7fa; direction: rtl; }
+      .lang-hero { background: linear-gradient(135deg, #fbc02d 0%, #f9a825 100%); color: white; padding: 80px 40px; text-align: center; }
+      .lang-hero__icon { font-size: 100px; margin-bottom: 20px; }
+      .lang-hero__title { font-size: 48px; margin-bottom: 15px; font-weight: 700; }
+      .lang-hero__subtitle { font-size: 24px; opacity: 0.95; }
+      .lang-container { max-width: 1000px; margin: 0 auto; padding: 60px 40px; }
+      .content-section { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 40px; }
+      .content-section h2 { font-size: 32px; color: #2c3e50; margin-bottom: 20px; border-right: 5px solid #fbc02d; padding-right: 15px; }
+      .content-section h3 { font-size: 24px; color: #34495e; margin: 30px 0 15px 0; }
+      .content-section p { font-size: 18px; line-height: 1.8; color: #555; margin-bottom: 15px; }
+      .content-section ul, .content-section ol { padding-right: 30px; margin-bottom: 20px; }
+      .content-section li { font-size: 18px; line-height: 1.8; color: #555; margin-bottom: 10px; }
+      .code-example { background: #1e1e1e; color: #d4d4d4; padding: 20px; border-radius: 10px; font-family: 'Consolas', 'Monaco', monospace; font-size: 14px; line-height: 1.6; overflow-x: auto; margin: 20px 0; direction: ltr; text-align: left; }
+      .feature-box { background: #e3f2fd; padding: 25px; border-radius: 15px; border-right: 4px solid #2196f3; margin: 25px 0; }
+      .example-box { background: #f1f8e9; padding: 25px; border-radius: 15px; border-right: 4px solid #fbc02d; margin: 25px 0; }
+      .start-learning-btn { display: inline-block; background: linear-gradient(135deg, #fbc02d 0%, #f9a825 100%); color: white; padding: 15px 40px; border-radius: 12px; text-decoration: none; font-size: 20px; font-weight: 600; margin-top: 30px; transition: all 0.3s; }
+      .start-learning-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4); }
+    </style>
+</head>
+<body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo">
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link ">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link app-navbar__link--active">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link ">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link ">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link ">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="lang-hero">
+      <div class="lang-hero__icon">⚙️</div>
+      <h1 class="lang-hero__title">JavaScript</h1>
+      <p class="lang-hero__subtitle">اجعل مواقعك حية وتفاعلية</p>
+    </div>
+
+    <div class="lang-container">
+      <div class="content-section">
+        <h2>📖 ما هي JavaScript؟</h2>
+        <p>JavaScript هي اللغة التي تجعل موقعك حياً ومتحركاً! بدونها المواقع تكون ثابتة مثل الصور. معها يمكنك إنشاء ألعاب، حاسبات، وتطبيقات تفاعلية كاملة!</p>
+        <p>تعمل في المتصفح مباشرة ولا تحتاج أي برامج إضافية. أكثر من 97% من المواقع على الإنترنت تستخدم JavaScript!</p>
+      </div>
+
+      <div class="content-section">
+        <h2>🎯 لماذا تتعلم JavaScript؟</h2>
+        <div class="feature-box">
+          <ul>
+            <li><strong>الأكثر شعبية:</strong> أكثر من 97% من المواقع تستخدمها</li>
+            <li><strong>تعمل في كل مكان:</strong> المواقع، التطبيقات، الألعاب، حتى الروبوتات!</li>
+            <li><strong>رواتب عالية:</strong> من أعلى المبرمجين دخلاً في العالم</li>
+            <li><strong>مستقبل واعد:</strong> الطلب عليها يزداد كل يوم</li>
+            <li><strong>مجتمع ضخم:</strong> ملايين المطورين جاهزين لمساعدتك</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>📚 الأساسيات التي ستتعلمها</h2>
+        
+        <h3>1. المتغيرات (Variables)</h3>
+        <p>تخزين المعلومات:</p>
+        <div class="code-example">// متغيرات بسيطة
+let name = "أحمد";
+let age = 10;
+let score = 95.5;
+
+// ثوابت
+const PI = 3.14;
+const APP_NAME = "كاود";
+
+// استخدام المتغيرات
+console.log("اسمي " + name);
+console.log("عمري " + age + " سنوات");</div>
+
+        <h3>2. الشروط (If Statements)</h3>
+        <div class="code-example">let score = 85;
+
+if (score >= 90) {
+    console.log("ممتاز!");
+} else if (score >= 80) {
+    console.log("جيد جداً");
+} else {
+    console.log("جيد");
+}
+
+// شروط مختصرة
+let result = score >= 60 ? "ناجح" : "راسب";</div>
+
+        <h3>3. الحلقات (Loops)</h3>
+        <div class="code-example">// حلقة for
+for (let i = 1; i <= 5; i++) {
+    console.log("العدد: " + i);
+}
+
+// حلقة while
+let count = 1;
+while (count <= 5) {
+    console.log(count);
+    count++;
+}
+
+// المرور على مصفوفة
+let fruits = ["تفاح", "موز", "برتقال"];
+fruits.forEach(fruit => {
+    console.log(fruit);
+});</div>
+
+        <h3>4. الدوال (Functions)</h3>
+        <div class="code-example">// دالة بسيطة
+function greet() {
+    console.log("مرحباً!");
+}
+
+// دالة بمعاملات
+function greetPerson(name) {
+    return "مرحباً " + name + "!";
+}
+
+// دالة سهمية (Arrow Function)
+const add = (a, b) => a + b;
+
+console.log(add(5, 3));  // 8</div>
+
+        <h3>5. المصفوفات (Arrays)</h3>
+        <div class="code-example">// إنشاء مصفوفة
+let numbers = [1, 2, 3, 4, 5];
+let names = ["أحمد", "سارة", "علي"];
+
+// إضافة عناصر
+numbers.push(6);
+
+// حذف آخر عنصر
+numbers.pop();
+
+// البحث
+names.includes("أحمد");  // true
+
+// التحويل
+let doubled = numbers.map(n => n * 2);</div>
+
+        <h3>6. الكائنات (Objects)</h3>
+        <div class="code-example">// إنشاء كائن
+let student = {
+    name: "أحمد",
+    age: 10,
+    grade: "الخامس",
+    subjects: ["رياضيات", "علوم"],
+    
+    // دالة داخل الكائن
+    introduce: function() {
+        return "أنا " + this.name;
+    }
+};
+
+// الوصول للبيانات
+console.log(student.name);
+console.log(student["age"]);</div>
+
+        <h3>7. التعامل مع DOM</h3>
+        <div class="code-example">// الوصول للعناصر
+let title = document.getElementById("title");
+let buttons = document.getElementsByClassName("btn");
+
+// تغيير المحتوى
+title.innerText = "عنوان جديد";
+title.style.color = "blue";
+
+// إضافة مستمع للأحداث
+button.addEventListener("click", function() {
+    alert("تم الضغط!");
+});
+
+// إنشاء عناصر جديدة
+let newDiv = document.createElement("div");
+newDiv.innerText = "محتوى جديد";
+document.body.appendChild(newDiv);</div>
+      </div>
+
+      <div class="content-section">
+        <h2>💡 مثال تطبيقي كامل</h2>
+        <div class="example-box">
+          <p>لعبة تفاعلية بسيطة:</p>
+          <div class="code-example"><!DOCTYPE html>
+<html>
+<head>
+    <title>لعبة النقر</title>
+</head>
+<body>
+    <h1 id="score">النقاط: 0</h1>
+    <button id="clickBtn">اضغط هنا!</button>
+    
+    <script>
+        let score = 0;
+        const scoreDisplay = document.getElementById("score");
+        const button = document.getElementById("clickBtn");
+        
+        button.addEventListener("click", function() {
+            score++;
+            scoreDisplay.innerText = "النقاط: " + score;
+            
+            if (score === 10) {
+                alert("مبروك! وصلت لـ 10 نقاط!");
+            }
+        });
+    </script>
+
+    <script>
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (!currentUser) window.location.href = 'login.html';
+      
+      document.getElementById('logoutBtn')?.addEventListener('click', function() {
+        if (confirm('Caod Says: هل تريد تسجيل الخروج؟')) {
+          localStorage.removeItem('currentUser');
+          window.location.href = '../index.html';
+        }
+      });
+    </script>
+</body>
+</html></div>
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h2>🚀 ماذا يمكنك أن تبني بـ JavaScript؟</h2>
+        <ul>
+          <li><strong>مواقع تفاعلية:</strong> أزرار، نماذج، قوائم متحركة</li>
+          <li><strong>ألعاب ويب:</strong> ألعاب تعمل في المتصفح</li>
+          <li><strong>تطبيقات ويب:</strong> Gmail, Facebook, Netflix</li>
+          <li><strong>تطبيقات موبايل:</strong> باستخدام React Native</li>
+          <li><strong>خوادم:</strong> باستخدام Node.js</li>
+        </ul>
+      </div>
+
+      <div class="content-section" style="text-align: center;">
+        <h2>🚀 جاهز للبدء؟</h2>
+        <p>ابدأ رحلتك في تعلم JavaScript الآن!</p>
+        <a href="challenges.html" class="start-learning-btn">ابدأ التعلم</a>
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+
+    <script>
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (!currentUser) window.location.href = 'login.html';
+      
+      document.getElementById('logoutBtn')?.addEventListener('click', function() {
+        if (confirm('Caod Says: هل تريد تسجيل الخروج؟')) {
+          localStorage.removeItem('currentUser');
+          window.location.href = '../index.html';
+        }
+      });
+    </script>
+</body>
+</html>

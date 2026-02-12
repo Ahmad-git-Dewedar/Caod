@@ -19,10 +19,10 @@
 </div>
 
 CAOD is an **independent educational platform** for learning programming in a clear, practical, and enjoyable way.  
-This project is **still under development** and **not live yet**.  
+This project is **still under development** and **not live yet**.
 
 All credit goes to **God** for the opportunity and passion to start this project.  
-CAOD is **completely independent** and **not affiliated** with any company or organization.  
+CAOD is **completely independent** and **not affiliated** with any company or organization.
 
 ---
 
@@ -32,11 +32,11 @@ CAOD is **completely independent** and **not affiliated** with any company or or
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=500&color=1572B6&center=true&width=400&lines=Structured+Lessons;Interactive+Projects;Practical+Learning;Easy+Navigation" alt="Typing SVG" />
 </div>
 
-- 🧠 **Student-Focused Design** – Everything supports learning  
-- 🧩 **Organized Content** – Lessons and projects grouped logically  
-- 📱 **Fully Responsive** – Mobile, tablet & desktop ready  
-- ⚡ **Lightweight** – Fast and smooth performance  
-- 🎨 **Interactive Touches** – Animations for better engagement  
+- 🧠 **Student-Focused Design** – Everything supports learning
+- 🧩 **Organized Content** – Lessons and projects grouped logically
+- 📱 **Fully Responsive** – Mobile, tablet & desktop ready
+- ⚡ **Lightweight** – Fast and smooth performance
+- 🎨 **Interactive Touches** – Animations for better engagement
 
 ---
 
@@ -73,4 +73,3 @@ This platform is **personal, educational, under development**, and **not affilia
 CAOD is currently a **work in progress**.  
 Interactive projects + organized lessons = better learning experience in the near future.  
 Thanks to **God** for this journey 🙏
-

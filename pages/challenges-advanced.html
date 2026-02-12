@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <title>التحديات - مرحلة متقدمة | كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { 
+        font-family: "IBM Plex Sans Arabic", sans-serif; 
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        direction: rtl;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 80px 20px 60px;
+        color: white;
+      }
+
+      .hero h1 { font-size: 48px; margin-bottom: 20px; }
+      .hero p { font-size: 20px; opacity: 0.9; }
+
+      .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+      .challenges-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .challenge-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+
+      .challenge-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+      }
+
+      .challenge-icon { font-size: 50px; margin-bottom: 20px; }
+      
+      .challenge-card h2 { 
+        font-size: 24px; 
+        color: #2c3e50; 
+        margin-bottom: 15px; 
+      }
+
+      .difficulty {
+        display: inline-block;
+        background: #fff3cd;
+        color: #856404;
+        padding: 6px 12px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .difficulty.hard { background: #f8d7da; color: #721c24; }
+
+      .challenge-card p {
+        color: #7f8c8d;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .challenge-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+      }
+
+      .challenge-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      }
+
+      .points {
+        font-size: 12px;
+        color: #667eea;
+        font-weight: 600;
+        margin-top: 15px;
+      }
+    </style>
+</head>
+<body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo" />
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link app-navbar__link--active">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>⭐ التحديات المتقدمة</h1>
+      <p>تحديات صعبة تطور مهاراتك البرمجية</p>
+    </div>
+
+    <div class="container">
+      <div class="challenges-grid">
+        <div class="challenge-card">
+          <div class="challenge-icon">🔥</div>
+          <h2>بناء محرك بحث</h2>
+          <span class="difficulty hard">متقدم جداً</span>
+          <p>بناء محرك بحث بسيط مثل جوجل من الصفر باستخدام Python</p>
+          <div class="points">⭐ 500 نقطة</div>
+          <button class="challenge-btn" onclick="window.location.href='challenge-solve.html'">ابدأ التحدي</button>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">🤖</div>
+          <h2>نظام التوصيات الذكي</h2>
+          <span class="difficulty hard">متقدم جداً</span>
+          <p>بناء نظام توصيات باستخدام Machine Learning</p>
+          <div class="points">⭐ 450 نقطة</div>
+          <button class="challenge-btn" onclick="window.location.href='challenge-solve.html'">ابدأ التحدي</button>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">⚡</div>
+          <h2>تحسين الأداء</h2>
+          <span class="difficulty hard">متقدم</span>
+          <p>تحسين كود بطيء واجعله 10 مرات أسرع!</p>
+          <div class="points">⭐ 400 نقطة</div>
+          <button class="challenge-btn" onclick="window.location.href='challenge-solve.html'">ابدأ التحدي</button>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">🔐</div>
+          <h2>نظام التشفير</h2>
+          <span class="difficulty hard">متقدم جداً</span>
+          <p>بناء نظام تشفير RSA من الصفر</p>
+          <div class="points">⭐ 480 نقطة</div>
+          <button class="challenge-btn" onclick="window.location.href='challenge-solve.html'">ابدأ التحدي</button>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">🕸️</div>
+          <h2>Web Scraping</h2>
+          <span class="difficulty hard">متقدم</span>
+          <p>احصل على بيانات من الويب بطريقة احترافية</p>
+          <div class="points">⭐ 420 نقطة</div>
+          <button class="challenge-btn" onclick="window.location.href='challenge-solve.html'">ابدأ التحدي</button>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">🧠</div>
+          <h2>الشبكات العصبية</h2>
+          <span class="difficulty hard">متقدم جداً</span>
+          <p>بناء شبكة عصبية لتصنيف الصور</p>
+          <div class="points">⭐ 510 نقطة</div>
+          <button class="challenge-btn" onclick="window.location.href='challenge-solve.html'">ابدأ التحدي</button>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">📱</div>
+          <h2>تطبيق جوال متقدم</h2>
+          <span class="difficulty hard">متقدم</span>
+          <p>بناء تطبيق جوال بميزات متقدمة</p>
+          <div class="points">⭐ 460 نقطة</div>
+          <button class="challenge-btn" onclick="window.location.href='challenge-solve.html'">ابدأ التحدي</button>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">🎮</div>
+          <h2>محرك ألعاب</h2>
+          <span class="difficulty hard">متقدم جداً</span>
+          <p>بناء محرك ألعاب ثلاثي الأبعاد</p>
+          <div class="points">⭐ 520 نقطة</div>
+          <button class="challenge-btn" onclick="window.location.href='challenge-solve.html'">ابدأ التحدي</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/app-common.js"></script>
+    <script>
+      const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+      if (!currentUser) window.location.href = "login.html";
+
+      document.getElementById("logoutBtn")?.addEventListener("click", function() {
+        if (confirm("هل تريد تسجيل الخروج؟")) {
+          localStorage.removeItem("currentUser");
+          window.location.href = "../index.html";
+        }
+      });
+    </script>
+</body>
+</html>

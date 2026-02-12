@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسجيل الدخول - كاود</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="body--auth">
+    <div class="auth-container">
+      <div class="auth-card">
+        <div class="auth-card__header">
+          <div class="auth-card__logo-wrapper">
+            <img class="auth-card__logo" src="../img/logo.png" alt="Logo" />
+          </div>
+          <h1 class="auth-card__title">تسجيل الدخول</h1>
+          <p class="auth-card__subtitle">مرحباً بعودتك إلى كاود</p>
+        </div>
+
+        <form class="auth-form" id="loginForm">
+          <div class="form-group">
+            <label for="username" class="form-label">
+              اسم المستخدم أو البريد الإلكتروني
+            </label>
+            <input 
+              type="text" 
+              id="username" 
+              name="username" 
+              class="form-input" 
+              placeholder="أدخل اسم المستخدم أو البريد الإلكتروني"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label">
+              كلمة المرور
+            </label>
+            <div class="password-input-wrapper">
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                class="form-input" 
+                placeholder="أدخل كلمة المرور"
+                required
+              />
+              <button type="button" class="password-toggle" id="togglePassword">
+                <span class="password-toggle__icon">👁️</span>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block">
+            تسجيل الدخول
+          </button>
+        </form>
+
+        <div class="auth-card__footer">
+          <p class="auth-card__footer-text">
+            ليس لديك حساب؟ 
+            <a href="signup.html" class="auth-card__link">إنشاء حساب جديد</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+  </body>
+</html>

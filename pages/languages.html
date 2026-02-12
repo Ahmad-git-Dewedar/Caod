@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>لغات البرمجة | كاود</title>
+    <link rel="icon" type="image/png" href="../img/favicon/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        background: #f5f7fa;
+        color: #333;
+        direction: rtl;
+      }
+      header {
+        background: #1e88e5;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 28px;
+      }
+      .container {
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        background: white;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        text-align: center;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card h2 {
+        margin-top: 0;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .html {
+        border-top: 6px solid #4caf50;
+      }
+      .css {
+        border-top: 6px solid #2196f3;
+      }
+      .js {
+        border-top: 6px solid #fbc02d;
+      }
+      .python {
+        border-top: 6px solid #4caf50;
+      }
+      .java {
+        border-top: 6px solid #2196f3;
+      }
+      .c {
+        border-top: 6px solid #ff5722;
+      }
+      .cpp {
+        border-top: 6px solid #9c27b0;
+      }
+      .ruby {
+        border-top: 6px solid #e91e63;
+      }
+      .php {
+        border-top: 6px solid #6f42c1;
+      }
+      .go {
+        border-top: 6px solid #00add8;
+      }
+      .swift {
+        border-top: 6px solid #fa7343;
+      }
+      .kotlin {
+        border-top: 6px solid #7f52ff;
+      }
+      .rust {
+        border-top: 6px solid #ce422b;
+      }
+      .typescript {
+        border-top: 6px solid #3178c6;
+      }
+      .dart {
+        border-top: 6px solid #0175c2;
+      }
+      .sql {
+        border-top: 6px solid #f29111;
+      }
+      .scratch {
+        border-top: 6px solid #ffab19;
+      }
+      .react {
+        border-top: 6px solid #61dafb;
+      }
+
+      .special-card {
+        grid-column: 1 / -1;
+        max-width: 100%;
+        background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+        border-top: 6px solid #ffd700;
+        color: white;
+        animation: pulse 2s infinite;
+        position: relative;
+        overflow: hidden;
+      }
+      .special-card::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        animation: shine 3s infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        50% {
+          transform: scale(1.01);
+          box-shadow: 0 15px 30px rgba(102, 126, 234, 0.5);
+        }
+      }
+      @keyframes shine {
+        0% {
+          transform: rotate(0deg) translate(-50%, -50%);
+        }
+        100% {
+          transform: rotate(360deg) translate(-50%, -50%);
+        }
+      }
+      .special-card h2 {
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        font-size: 24px;
+      }
+      .special-text {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+        margin-top: 8px;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        padding: 30px 40px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 900px;
+        max-height: 80vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .close {
+        color: #aaa;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+      }
+
+      .modal-content h1 {
+        text-align: center;
+        color: #1e88e5;
+        margin-bottom: 20px;
+      }
+
+      .modal-content h2 {
+        color: #2c3e50;
+        margin-top: 25px;
+        margin-bottom: 15px;
+      }
+
+      .modal-content ul {
+        padding-right: 25px;
+      }
+
+      .modal-content li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+      }
+
+      .modal-content pre {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 10px;
+        overflow-x: auto;
+        direction: ltr;
+        text-align: left;
+        font-family: "Consolas", "Monaco", monospace;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo">
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link ">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link app-navbar__link--active">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link ">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link ">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link ">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <header>📘 لغات البرمجة في كاود</header>
+
+    <div class="container">
+      <div class="card html" data-lang="html"><h2>🌐 HTML</h2></div>
+      <div class="card css" data-lang="css"><h2>🎨 CSS</h2></div>
+      <div class="card js" data-lang="js"><h2>⚙️ JavaScript</h2></div>
+      <div class="card python" data-lang="python"><h2>🐍 Python</h2></div>
+      <div class="card java" data-lang="java"><h2>☕ Java</h2></div>
+      <div class="card c" data-lang="c"><h2>💻 C</h2></div>
+      <div class="card cpp" data-lang="cpp"><h2>💻 C++</h2></div>
+      <div class="card ruby" data-lang="ruby"><h2>💎 Ruby</h2></div>
+      <div class="card php" data-lang="php"><h2>🐘 PHP</h2></div>
+      <div class="card go" data-lang="go"><h2>🐹 Go</h2></div>
+      <div class="card swift" data-lang="swift"><h2>🦅 Swift</h2></div>
+      <div class="card kotlin" data-lang="kotlin"><h2>🤖 Kotlin</h2></div>
+      <div class="card rust" data-lang="rust"><h2>🦀 Rust</h2></div>
+      <div class="card typescript" data-lang="typescript">
+        <h2>📘 TypeScript</h2>
+      </div>
+      <div class="card dart" data-lang="dart"><h2>🎯 Dart</h2></div>
+      <div class="card sql" data-lang="sql"><h2>🗄️ SQL</h2></div>
+      <div class="card scratch" data-lang="scratch"><h2>🐱 Scratch</h2></div>
+      <div class="card react" data-lang="react"><h2>⚛️ React</h2></div>
+
+      <div class="card special-card" id="specialCard">
+        <h2>🎁 مفاجأة خاصة!</h2>
+        <p class="special-text">اضغط هنا لتكتشف شيئاً رائعاً! 🌟</p>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-text"></div>
+      </div>
+    </div>
+
+    <script src="../js/languages-modal.js"></script>
+  </body>
+</html>

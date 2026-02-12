@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>حل التحدي - كاود</title>
+    <link rel="icon" href="../img/favicon/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/global-styles.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: "IBM Plex Sans Arabic", sans-serif; background: #f5f7fa; direction: rtl; }
+      
+      .challenge-solve-container {
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .challenge-header {
+        background: white;
+        padding: 20px 40px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .challenge-info {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      
+      .challenge-info__icon {
+        font-size: 40px;
+      }
+      
+      .challenge-info__details h2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+        color: #2c3e50;
+      }
+      
+      .challenge-info__details p {
+        color: #7f8c8d;
+      }
+      
+      .challenge-actions {
+        display: flex;
+        gap: 15px;
+      }
+      
+      .challenge-btn {
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: inherit;
+      }
+      
+      .challenge-btn--run {
+        background: #2ecc71;
+        color: white;
+      }
+      
+      .challenge-btn--run:hover {
+        background: #27ae60;
+        transform: scale(1.05);
+      }
+      
+      .challenge-btn--submit {
+        background: #3498db;
+        color: white;
+      }
+      
+      .challenge-btn--submit:hover {
+        background: #2980b9;
+        transform: scale(1.05);
+      }
+      
+      .challenge-btn--back {
+        background: #95a5a6;
+        color: white;
+      }
+      
+      .challenge-btn--back:hover {
+        background: #7f8c8d;
+      }
+      
+      .editor-container {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      
+      .editor-panel {
+        background: #1e1e1e;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .editor-panel__header {
+        background: #2d2d2d;
+        padding: 15px 20px;
+        color: white;
+        font-weight: 600;
+        border-bottom: 1px solid #444;
+      }
+      
+      .code-editor {
+        flex: 1;
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 14px;
+        line-height: 1.6;
+        border: none;
+        resize: none;
+        outline: none;
+        direction: ltr;
+        text-align: left;
+      }
+      
+      .preview-panel {
+        background: white;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .preview-panel__header {
+        background: #f8f9fa;
+        padding: 15px 20px;
+        font-weight: 600;
+        border-bottom: 1px solid #dee2e6;
+      }
+      
+      .preview-frame {
+        flex: 1;
+        border: none;
+        background: white;
+      }
+      
+      .requirements-panel {
+        background: #fff3cd;
+        padding: 20px;
+        border-bottom: 2px solid #ffc107;
+      }
+      
+      .requirements-panel h3 {
+        color: #856404;
+        margin-bottom: 10px;
+      }
+      
+      .requirements-list {
+        list-style: none;
+        padding-right: 20px;
+      }
+      
+      .requirements-list li {
+        color: #856404;
+        margin-bottom: 5px;
+        position: relative;
+      }
+      
+      .requirements-list li::before {
+        content: '✓';
+        position: absolute;
+        right: -20px;
+        font-weight: bold;
+      }
+      
+      @media (max-width: 768px) {
+        .editor-container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="app-navbar">
+      <div class="app-navbar__container">
+        <div class="app-navbar__logo-section">
+          <img src="../img/logo.png" alt="كاود" class="app-navbar__logo">
+          <h1 class="app-navbar__title">كاود</h1>
+        </div>
+        <div class="app-navbar__nav">
+          <a href="home.html" class="app-navbar__link ">الرئيسية</a>
+          <a href="courses-new.html" class="app-navbar__link ">الكورسات</a>
+          <a href="challenges.html" class="app-navbar__link app-navbar__link--active">التحديات</a>
+          <a href="study-groups-real.html" class="app-navbar__link ">ذاكر مع أصدقائي</a>
+          <a href="profile.html" class="app-navbar__link ">الملف الشخصي</a>
+          <button class="app-navbar__logout-btn" id="logoutBtn">تسجيل الخروج</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="requirements-panel">
+      <h3>المطلوب في هذا التحدي:</h3>
+      <ul class="requirements-list" id="requirementsList"></ul>
+    </div>
+
+    <div class="challenge-header">
+      <div class="challenge-info">
+        <div class="challenge-info__icon" id="challengeIcon">🌐</div>
+        <div class="challenge-info__details">
+          <h2 id="challengeTitle">التحدي</h2>
+          <p id="challengeDesc">وصف التحدي</p>
+        </div>
+      </div>
+      <div class="challenge-actions">
+        <button class="challenge-btn challenge-btn--back" onclick="window.location.href='challenges.html'">← رجوع</button>
+        <button class="challenge-btn challenge-btn--run" id="runBtn">▶ تشغيل</button>
+        <button class="challenge-btn challenge-btn--submit" id="submitBtn">✓ إرسال الحل</button>
+      </div>
+    </div>
+
+    <div class="challenge-solve-container">
+      <div class="editor-container">
+        <div class="editor-panel">
+          <div class="editor-panel__header">محرر الأكواد</div>
+          <textarea class="code-editor" id="codeEditor" placeholder="اكتب الكود هنا..."></textarea>
+        </div>
+        
+        <div class="preview-panel">
+          <div class="preview-panel__header">المعاينة</div>
+          <iframe class="preview-frame" id="previewFrame"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/challenge-solve.js"></script>
+  </body>
+</html>
